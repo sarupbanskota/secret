@@ -30,7 +30,6 @@
     %br/
     = f.text_field :webpage
 
-
   .field
     = f.label :password
     %i (leave blank if you don't want to change it)
@@ -45,6 +44,57 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "off"
+
+  .field
+    = f.label :bio
+    %br/
+    = f.text_field :bio
+
+  .field
+    = f.label :meal_restriction
+    %br/
+    = f.text_field :meal_restriction
+
+  .field
+    = f.label :shirt_size
+    %br/
+    = f.text_field :shirt_size
+
+  .field
+    = f.label :length_of_stay
+    %br/
+    = f.text_field :length_of_stay
+
+  .field
+    = f.label :length_of_stay
+    %br/
+    = f.text_field :length_of_stay
+
+  .field
+    = f.label :meal_restriction
+    %br/
+    = f.text_field :meal_restriction
+
+  .field
+    = f.label :sponsorship_needed
+    %br/
+    = f.text_field :sponsorship_needed
+
+  .field
+    = f.label :arrival_date
+    %br/
+    = f.text_field :arrival_date
+
+  .field
+    = f.label :arrival_time
+    %br/
+    = f.text_field :arrival_time
+
+  .field
+    = f.label :flight_number
+    %br/
+    = f.text_field :flight_number
+    
   .actions
     = f.submit "Update"
 %h3 Cancel my account
