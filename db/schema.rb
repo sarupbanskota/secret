@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517195142) do
+ActiveRecord::Schema.define(version: 20150517202111) do
+
+  create_table "proposals", force: true do |t|
+    t.string   "headline"
+    t.string   "subline"
+    t.text     "description"
+    t.string   "class"
+    t.string   "duration"
+    t.string   "accepted"
+    t.string   "date"
+    t.string   "track"
+    t.string   "slot"
+    t.string   "confirmed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
