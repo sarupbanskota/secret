@@ -24,6 +24,7 @@ class SeminarsController < ApplicationController
 
   def create
     @seminar = Seminar.new(seminar_params)
+    @seminar.user_id = current_user.id
     @seminar.save
     respond_with(@seminar)
   end
@@ -44,6 +45,17 @@ class SeminarsController < ApplicationController
     end
 
     def seminar_params
-      params.require(:seminar).permit(:user_id, :headline, :subline, :description, :duration, :slot, :confirmed, :category, :accepted, :confirmed, :track, :date)
+      params.require(:seminar).permit(:user_id, 
+                                      :headline, 
+                                      :subline, 
+                                      :description, 
+                                      :duration, 
+                                      :slot, 
+                                      :confirmed, 
+                                      :category, 
+                                      :accepted, 
+                                      :confirmed, 
+                                      :track, 
+                                      :date)
     end
 end

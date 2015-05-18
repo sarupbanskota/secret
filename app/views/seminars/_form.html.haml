@@ -1,4 +1,4 @@
-= form_for(@seminar) do |f|
+= bootstrap_form_for(@seminar) do |f|
   - if @seminar.errors.any?
     #error_explanation
       %h2
@@ -8,64 +8,21 @@
         - @seminar.errors.full_messages.each do |message|
           %li= message
 
-    = f.hidden_field :user_id, value: current_user.id
 
-  .input-group.input-group-lg
-    = f.label :category
-    %br/
-    = f.text_field :category
-
-  .input-group.input-group-lg
-    = f.label :headline
-    %br/
-    = f.text_field :headline
-
-  .input-group.input-group-lg
-    = f.label :subline
-    %br/
-    = f.text_field :subline
-
-  .input-group.input-group-lg
-    = f.label :description
-    %br/
-    = f.text_area :description
-
-  .input-group.input-group-lg
-    = f.label :duration
-    %br/
-    = f.text_field :duration
+  = f.select :category, [["Talk", "Talk"], ["Workshop", "Workshop"], ["Presentation", "Presentation"], ["Demonstration", "Demonstration"], ["Hackfest", "Hackfest"]], required: "true"
+  = f.text_field :headline, required: "true", help: "Give your proposal a catchy title." 
+  = f.text_field :subline
+  = f.text_area :description, required: "true", help: "Explain in detail about what you're proposing."
+  = f.text_field :duration, help: "How long is your session estimated to be?"
 
   - if current_user.role == "admin"
 
-    .input-group.input-group-lg
-      = f.label :slot
-      %br/
-      = f.text_field :slot
-
-    .input-group.input-group-lg
-      = f.label :confirmed
-      %br/
-      = f.text_field :confirmed
-
-    .input-group.input-group-lg
-      = f.label :accepted
-      %br/
-      = f.text_field :accepted
-
-    .input-group.input-group-lg
-      = f.label :confirmed
-      %br/
-      = f.text_field :confirmed
-
-    .input-group.input-group-lg
-      = f.label :track
-      %br/
-      = f.text_field :track
-
-    .input-group.input-group-lg
-      = f.label :date
-      %br/
-      = f.text_field :date
+    = f.text_field :slot
+    = f.text_field :confirmed
+    = f.text_field :accepted
+    = f.text_field :confirmed
+    = f.text_field :track
+    = f.text_field :date
 
   .actions
     = f.submit

@@ -1,4 +1,4 @@
--if user_signed_in? and current_user.id == @seminar.id
+-if user_signed_in? and current_user.id == @seminar.user_id
 	%h1 Editing seminar
 	= render 'form'
 	= link_to 'Show', @seminar
