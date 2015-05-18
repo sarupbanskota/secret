@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
-  has_many :proposals, dependent: :destroy
+  #has_many :proposals, dependent: :destroy
 end
