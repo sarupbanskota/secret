@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517202111) do
+ActiveRecord::Schema.define(version: 20150518043024) do
 
   create_table "proposals", force: true do |t|
     t.string   "headline"
@@ -57,6 +57,11 @@ ActiveRecord::Schema.define(version: 20150517202111) do
     t.string   "sponsoring_needed"
     t.string   "sponsorship_amount"
     t.string   "show_data"
+    t.string   "length_of_stay"
+    t.string   "sponsorship_needed"
+    t.string   "arrival_date"
+    t.string   "arrival_flight_number"
+    t.string   "arrival_time"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
