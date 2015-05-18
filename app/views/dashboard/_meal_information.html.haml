@@ -1,16 +1,17 @@
-%table.table.table-striped
-	%thead
-		%th Meal Type
-		%th Count
-	%tr
-		%td No Restriction
-		%td= @no_restriction_count
-	%tr
-		%td Hindu Meal
-		%td= @hindu_meal_count
-	%tr
-		%td Muslim Meal
-		%td= @muslim_meal_count
-	%tr
-		%td No Fish
-		%td= @no_fish_count
+- if user_signed_in? and current_user.role == "admin"
+	%table.table.table-striped
+		%thead
+			%th Meal Type
+			%th Count
+		%tr
+			%td No Restriction
+			%td= @no_restriction_count
+		%tr
+			%td Hindu Meal
+			%td= @hindu_meal_count
+		%tr
+			%td Muslim Meal
+			%td= @muslim_meal_count
+		%tr
+			%td No Fish
+			%td= @no_fish_count
