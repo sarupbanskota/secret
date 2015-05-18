@@ -46,8 +46,10 @@
 
 - if user_signed_in? and current_user.id == @seminar.user_id
   %br
+  %br
   = link_to 'Edit Proposal', edit_seminar_path(@seminar)
-  = link_to 'Withdraw Proposal', seminar, method: :delete, data: { confirm: 'Are you sure?' }
+  %br
+  = link_to 'Withdraw Proposal', @seminar, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 %br

@@ -10,5 +10,8 @@
 				%h3 Announcements
 				= render 'speaker_announcements'
 		.col-md-9.well
-			%h3 Proposals
-			= render 'seminars/index'
+			- if @seminars.count > 0
+				%h3 Proposals
+				= render 'seminars/index'
+			- else
+				.btn.btn-lg.btn-success= link_to "Submit new Proposal", "/seminars/new", style: "color: white"
