@@ -1,0 +1,53 @@
+%p#notice= notice
+
+.row
+  .col-md-1
+    %br
+    .btn.btn-sm.btn-primary
+      = @seminar.category
+  .col-md-11
+    %h3= @seminar.headline
+    %h5= @seminar.subline
+
+
+    by:
+    %strong
+      = @seminar.user.first_name
+      = @seminar.user.family_name
+    %br
+
+    = @seminar.duration
+
+%br
+
+
+%strong Description:
+%br
+= @seminar.description
+
+- if user_signed_in? and current_user.role == "admin"
+  %p
+    %strong Slot:
+    = @seminar.slot
+  %p
+    %strong Confirmed:
+    = @seminar.confirmed
+
+  %p
+    %strong Accepted:
+    = @seminar.accepted
+  %p
+    %strong Track:
+    = @seminar.track
+  %p
+    %strong Date:
+    = @seminar.date
+
+- if user_signed_in? and current_user.id == @seminar.user_id
+  %br
+  = link_to 'Edit Proposal', edit_seminar_path(@seminar)
+
+%br
+%br
+%br
+= link_to "< Back", seminars_path

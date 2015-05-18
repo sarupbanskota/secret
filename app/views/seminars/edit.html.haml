@@ -1,0 +1,8 @@
+-if user_signed_in? and current_user.id == @seminar.id
+	%h1 Editing seminar
+	= render 'form'
+	= link_to 'Show', @seminar
+	|
+	\#{link_to 'Back', seminars_path}
+- else
+	You are not allowed to access this page
