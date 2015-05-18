@@ -13,7 +13,7 @@
         %th Description
         %th Duration
         %th{:colspan => "3"}
-        - if current_user.role == "admin"
+        - if user_signed_in? and current_user.role == "admin"
           %th Slot
           %th Confirmed
           %th Accepted
@@ -31,11 +31,13 @@
           %td= seminar.subline
           %td= seminar.description
           %td= seminar.duration
-          %td= link_to 'Show', seminar
-          %td= link_to 'Edit', edit_seminar_path(seminar)
-          %td= link_to 'Withdraw', seminar, method: :delete, data: { confirm: 'Are you sure?' }
+          
+          -if user_signed_in? and current_user.id == seminar.user_id
+            %td= link_to 'Show', seminar
+            %td= link_to 'Edit', edit_seminar_path(seminar)
+            %td= link_to 'Withdraw', seminar, method: :delete, data: { confirm: 'Are you sure?' }
 
-          - if current_user.role == "admin"
+          - if user_signed_in? and current_user.role == "admin"
             %td= seminar.slot
             %td= seminar.confirmed
             %td= seminar.accepted
