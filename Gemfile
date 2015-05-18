@@ -9,6 +9,7 @@ gem 'rake', '~> 0.9.6'
 gem 'devise'
 gem 'haml'
 
+
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql
 # for production.
@@ -38,6 +39,8 @@ end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.3.4'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
