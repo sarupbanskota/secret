@@ -1,9 +1,14 @@
 %h3 Speaker Dashboard
 
 .row
-.col-md-4 
-	%h3 Proposals
-.col-md-4 
-	%h3 Profile Information
-.col-md-4 
-	%h3 Announcements
+	.col-md-4
+		%h3 Profile Information
+		= render 'speaker_overview'
+		
+	.col-md-5
+		%h3 Proposals
+		= render 'speaker_proposals'
+
+	.col-md-3
+		%h3 Announcements
+		= render 'speaker_announcements'

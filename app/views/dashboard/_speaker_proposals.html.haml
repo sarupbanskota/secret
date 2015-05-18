@@ -1,0 +1,17 @@
+- if @proposals
+	%table.table.table-striped
+		%thead
+			%th Headline
+			%th Status
+			%th Edit
+			%th Widthdraw
+
+		- @proposals.each do |proposal|
+			%tr
+				%td proposal.headline
+				%td proposal.status
+				%td Edit
+				%td Withdraw
+- else
+	%button.btn.btn-lg.btn-success
+		= link_to "Submit Proposal!", "/seminars/new"

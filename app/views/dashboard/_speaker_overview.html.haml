@@ -1,0 +1,55 @@
+.row
+	.col-md-3
+		%b Name:
+	.col-md-6
+		= current_user.first_name
+		= current_user.family_name
+.row
+	.col-md-4
+		%b Registered Email:
+	.col-md-6
+		= current_user.email
+.row
+	.col-md-4
+		%b Project:
+	.col-md-6
+		= current_user.project
+.row
+	.col-md-4
+		%b Webpage:
+	.col-md-6
+		= current_user.webpage
+
+%br
+
+.row
+	.col-md-4
+		%b Shirt Size:
+	.col-md-6
+		= current_user.shirt_size
+.row
+	.col-md-4
+		%b Meal Restrictions:
+	.col-md-6
+		= current_user.meal_restriction
+
+%br
+
+.row
+	.col-md-4
+		%b Sponsorship Required:
+	.col-md-6
+		= current_user.sponsoring_needed
+
+.row
+	.col-md-4
+		%b Sponsorship Amount Requested:
+	.col-md-6
+		= current_user.sponsorship_amount
+
+%br
+
+.row
+	.col-md-12
+		%button.btn.btn-sm.btn-success 
+			= link_to "Edit Profile", "/users/edit"
