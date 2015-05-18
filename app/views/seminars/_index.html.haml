@@ -1,0 +1,38 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th Link 
+      %th Category
+      %th User
+      %th Headline
+      %th Subline
+      %th Description
+      %th Duration
+      - if user_signed_in? and current_user.role == "admin"
+        %th Slot
+        %th Confirmed
+        %th Accepted
+        %th Confirmed
+        %th Track
+        %th Date
+
+  %tbody
+    - @seminars.each do |seminar|
+      %tr
+        %td= link_to 'Expand', seminar
+        %td= seminar.category
+        %td
+          = seminar.user.first_name
+          = seminar.user.family_name
+        %td= seminar.headline
+        %td= seminar.subline
+        %td
+          = truncate seminar.description, length: 140, separator: /\w/, omission: "..."                         
+        %td= seminar.duration
+        - if user_signed_in? and current_user.role == "admin"
+          %td= seminar.slot
+          %td= seminar.confirmed
+          %td= seminar.accepted
+          %td= seminar.confirmed
+          %td= seminar.track
+          %td= seminar.date

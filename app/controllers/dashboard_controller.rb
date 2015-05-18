@@ -4,7 +4,8 @@ class DashboardController < ApplicationController
 			case current_user.role
 				when "admin"    
 					render "_admin_dashboard"
-				when "speaker"  
+				when "speaker"
+					@seminars = current_user.seminars  
 					render "_speaker_dashboard"
 				when "attendee" 
 					render "_attendee_dashboard"

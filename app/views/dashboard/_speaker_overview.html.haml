@@ -1,55 +1,43 @@
-.row
-	.col-md-3
-		%b Name:
-	.col-md-6
-		= current_user.first_name
-		= current_user.family_name
-.row
-	.col-md-4
-		%b Registered Email:
-	.col-md-6
-		= current_user.email
-.row
-	.col-md-4
-		%b Project:
-	.col-md-6
-		= current_user.project
-.row
-	.col-md-4
-		%b Webpage:
-	.col-md-6
-		= current_user.webpage
+%table.table.table-striped
+	%thead
+		%th{:colspan => "2"} Speaker Information	
+	%tr
+		%td Name
+		%td 
+			= current_user.first_name
+			= current_user.family_name
+	%tr
+		%td Registered Email
+		%td= current_user.email
+
+	%tr
+		%td Project
+		%td= current_user.project
+
+	%tr
+		%td Webpage
+		%td= current_user.webpage
+
+	%tr
+		%td Bio
+		%td= current_user.bio
+
+%table.table.table-striped
+	%thead
+		%th{:colspan => "2"} Logistical Information
+	%tr
+		%td Shirt Size
+		%td= current_user.shirt_size
+	%tr
+		%td Meal Restrictions
+		%td= current_user.meal_restriction 
+	%tr
+		%td Sponsorship Required
+		%td= current_user.sponsoring_needed
+	%tr 
+		%td Sponsorship Amount
+		%td= current_user.sponsorship_amount
 
 %br
 
-.row
-	.col-md-4
-		%b Shirt Size:
-	.col-md-6
-		= current_user.shirt_size
-.row
-	.col-md-4
-		%b Meal Restrictions:
-	.col-md-6
-		= current_user.meal_restriction
-
-%br
-
-.row
-	.col-md-4
-		%b Sponsorship Required:
-	.col-md-6
-		= current_user.sponsoring_needed
-
-.row
-	.col-md-4
-		%b Sponsorship Amount Requested:
-	.col-md-6
-		= current_user.sponsorship_amount
-
-%br
-
-.row
-	.col-md-12
-		%button.btn.btn-sm.btn-success 
-			= link_to "Edit Profile", "/users/edit"
+.btn.btn-lg.btn-success= link_to "Edit Profile", "/users/edit", {style: "color: white"}
