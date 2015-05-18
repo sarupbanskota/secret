@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518060508) do
+ActiveRecord::Schema.define(version: 20150518060918) do
 
   create_table "proposals", force: true do |t|
     t.string   "headline"
@@ -28,6 +28,24 @@ ActiveRecord::Schema.define(version: 20150518060508) do
     t.datetime "updated_at"
     t.integer  "user_id"
   end
+
+  create_table "seminars", force: true do |t|
+    t.integer  "user_id"
+    t.string   "headline"
+    t.string   "subline"
+    t.text     "description"
+    t.string   "duration"
+    t.string   "slot"
+    t.string   "confirmed"
+    t.string   "category"
+    t.string   "accepted"
+    t.string   "track"
+    t.string   "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "seminars", ["user_id"], name: "index_seminars_on_user_id"
 
   create_table "sessions", force: true do |t|
     t.integer  "user_id"

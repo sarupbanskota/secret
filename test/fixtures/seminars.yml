@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  headline: MyString
+  subline: MyString
+  description: MyText
+  duration: MyString
+  slot: MyString
+  confirmed: MyString
+  category: MyString
+  accepted: MyString
+  confirmed: MyString
+  track: MyString
+  date: MyString
+
+two:
+  user_id: 
+  headline: MyString
+  subline: MyString
+  description: MyText
+  duration: MyString
+  slot: MyString
+  confirmed: MyString
+  category: MyString
+  accepted: MyString
+  confirmed: MyString
+  track: MyString
+  date: MyString

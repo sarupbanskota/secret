@@ -1,0 +1,47 @@
+<h1>Listing seminars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Headline</th>
+      <th>Subline</th>
+      <th>Description</th>
+      <th>Duration</th>
+      <th>Slot</th>
+      <th>Confirmed</th>
+      <th>Category</th>
+      <th>Accepted</th>
+      <th>Confirmed</th>
+      <th>Track</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seminars.each do |seminar| %>
+      <tr>
+        <td><%= seminar.user %></td>
+        <td><%= seminar.headline %></td>
+        <td><%= seminar.subline %></td>
+        <td><%= seminar.description %></td>
+        <td><%= seminar.duration %></td>
+        <td><%= seminar.slot %></td>
+        <td><%= seminar.confirmed %></td>
+        <td><%= seminar.category %></td>
+        <td><%= seminar.accepted %></td>
+        <td><%= seminar.confirmed %></td>
+        <td><%= seminar.track %></td>
+        <td><%= seminar.date %></td>
+        <td><%= link_to 'Show', seminar %></td>
+        <td><%= link_to 'Edit', edit_seminar_path(seminar) %></td>
+        <td><%= link_to 'Destroy', seminar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seminar', new_seminar_path %>
