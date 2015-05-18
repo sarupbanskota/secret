@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @session.user %>
+</p>
+
+<p>
+  <strong>Headline:</strong>
+  <%= @session.headline %>
+</p>
+
+<p>
+  <strong>Subline:</strong>
+  <%= @session.subline %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @session.description %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @session.duration %>
+</p>
+
+<p>
+  <strong>Slot:</strong>
+  <%= @session.slot %>
+</p>
+
+<p>
+  <strong>Confirmed:</strong>
+  <%= @session.confirmed %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @session.class %>
+</p>
+
+<p>
+  <strong>Accepted:</strong>
+  <%= @session.accepted %>
+</p>
+
+<p>
+  <strong>Confirmed:</strong>
+  <%= @session.confirmed %>
+</p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @session.track %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @session.date %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>
