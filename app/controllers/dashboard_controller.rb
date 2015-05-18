@@ -2,7 +2,8 @@ class DashboardController < ApplicationController
 	def index
 		if user_signed_in?
 			case current_user.role
-				when "admin"    
+				when "admin" 
+					@seminars = Seminar.all   
 					render "_admin_dashboard"
 				when "speaker"
 					@seminars = current_user.seminars  

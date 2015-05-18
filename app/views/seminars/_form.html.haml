@@ -11,12 +11,11 @@
   = f.text_field :duration, help: "How long is your session estimated to be?"
 
   - if current_user.role == "admin"
-
     = f.text_field :slot
-    = f.text_field :confirmed
-    = f.text_field :accepted
-    = f.text_field :confirmed
-    = f.text_field :track
+    = f.select :confirmed, [["No", "No"], ["Yes", "Yes"]]
+    = f.select :accepted, [["No", "No"], ["Yes", "Yes"]]
+    = f.select :track, [["No Track Selected", "No Track Selected"], ["Design", "Design"], ["Fedora", "Fedora"]]
+
     = f.text_field :date
 
   .actions
