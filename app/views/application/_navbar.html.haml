@@ -2,11 +2,13 @@
   .container-fluid
     .navbar-header
       %a.navbar-brand{:href => "/"} Fossography
-      %ul.nav.navbar-nav.navbar-right
+      %ul.nav.navbar-nav
+        %li= link_to 'Create New Proposal', new_seminar_path
+        %li= link_to 'View All Submissions', "/seminars"
         - if user_signed_in?
+          %li= link_to 'Edit Profile', "/users/edit"
           %li= link_to 'Logout', destroy_user_session_path, method: :delete if user_signed_in?
         - else
           %li= link_to "Sign In", "/users/sign_in"
           %li= link_to "Sign Up", "/users/sign_up"
-        %li= link_to 'Create New Proposal', new_seminar_path
           
