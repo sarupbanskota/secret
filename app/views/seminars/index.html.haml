@@ -1,0 +1,44 @@
+.col-md-12
+  %h3 Proposal Listing
+.col-md-2
+  = link_to 'New Seminar', new_seminar_path
+.col-md-10
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Category
+        %th User
+        %th Headline
+        %th Subline
+        %th Description
+        %th Duration
+        %th{:colspan => "3"}
+        - if current_user.role == "admin"
+          %th Slot
+          %th Confirmed
+          %th Accepted
+          %th Confirmed
+          %th Track
+          %th Date
+
+    %tbody
+      - @seminars.each do |seminar|
+        %tr
+          %td= seminar.category
+          %td
+            = seminar.user.email
+          %td= seminar.headline
+          %td= seminar.subline
+          %td= seminar.description
+          %td= seminar.duration
+          %td= link_to 'Show', seminar
+          %td= link_to 'Edit', edit_seminar_path(seminar)
+          %td= link_to 'Withdraw', seminar, method: :delete, data: { confirm: 'Are you sure?' }
+
+          - if current_user.role == "admin"
+            %td= seminar.slot
+            %td= seminar.confirmed
+            %td= seminar.accepted
+            %td= seminar.confirmed
+            %td= seminar.track
+            %td= seminar.date
