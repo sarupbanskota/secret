@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
     																							:shirt_size,
     																							:length_of_stay,
     																							:sponsoring_needed,
+                                                                                                :sponsorship_amount,
     																							:arrival_date,
     																							:arrival_flight_number,
     																							:arrival_time
@@ -32,6 +33,7 @@ class ApplicationController < ActionController::Base
     																							:shirt_size,
     																							:length_of_stay,
     																							:sponsoring_needed,
+                                                                                                :sponsorship_amount,
     																							:arrival_date,
     																							:arrival_flight_number,
     																							:arrival_time
