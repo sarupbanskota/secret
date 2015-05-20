@@ -1,5 +1,6 @@
+%br
 .row
-  .col-md-6.media-object
+  .col-md-7
   .col-md-3.well
     %h1 Sign in to Fossography
 
@@ -8,7 +9,6 @@
     = bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = f.email_field :email, autofocus: true
       = f.password_field :password, autocomplete: "off"
-      %br
       - if devise_mapping.rememberable?
         = f.check_box :remember_me
       = f.submit "Log in"
