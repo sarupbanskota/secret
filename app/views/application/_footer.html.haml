@@ -1,0 +1,32 @@
+%footer.text-center
+  .footer-above
+    .container
+      .row
+        .footer-col.col-md-4.col-md-offset-4
+          %h3 Follow us on
+          %ul.list-inline
+            %li
+              %a.btn-social.btn-outline{:href => "#"}
+                %i.fa.fa-fw.fa-facebook
+            %li
+              %a.btn-social.btn-outline{:href => "#"}
+                %i.fa.fa-fw.fa-google-plus
+            %li
+              %a.btn-social.btn-outline{:href => "#"}
+                %i.fa.fa-fw.fa-twitter
+          %ul.list-inline
+            %li
+              %a.go{:href => "#"}
+                %span
+  .footer-below
+    .container
+      .row
+        .col-lg-12
+          %img{:src => "/img/88x31.png"}/
+          %br/
+          Except where otherwise
+          = succeed "," do
+            %a{:href => "http://creativecommons.org/policies#license"} noted
+          %span{:href => "http://fossography.org"} this site
+          is licensed under a
+          %a{:href => "http://creativecommons.org/licenses/by-sa/4.0/"} Creative Commons Attribution 4.0 International license

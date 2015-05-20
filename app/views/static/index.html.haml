@@ -1,90 +1,36 @@
-%body#page-top.index
-  / Menu
-  .navbar.navbar-custom.navbar-default
-    .container
-      .navbar-header
-        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand{:href => "index.html"}
-          %img{:alt => "logo", :src => "img/header_logo.png"}/
-      .collapse.navbar-collapse.navbar-right
-        %ul.nav.navbar-nav
-          %li
-            %a.menu_general{:href => "en/info"} About
-          %li
-            %a.menu_program{:href => "../programm"} Program
-          %li
-            %a.menu_venue{:href => "../addons"} Venue
-          %li
-            %a.menu_contact{:href => "../service"} Contact
-  / Slider
-  #myCarousel.carousel.slide{"data-ride" => "carousel"}
-    / Indicators
-    %ol.carousel-indicators
-      %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-      %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-      %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
-    .carousel-inner
-      .item.active
-        %img{:alt => "First slide", :src => "img/sun_bw.png", :style => "width:100%"}/
-        .container
-          .carousel-caption
-            %h1 Slide 1
-            %p Aenean a rutrum nulla. Vestibulum a arcu at nisi tristique pretium.
-            %p
-              %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Sign up today
-      .item
-        %img{:alt => "Second slide", "data-src" => "", :src => "img/camera_bw.png", :style => "width:100%"}/
-        .container
-          .carousel-caption
-            %h1 Slide 2
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae egestas purus.
-            %p
-              %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Learn more
-      .item
-        %img{:alt => "Third slide", "data-src" => "", :src => "img/design_bw.jpg", :style => "width:100%"}/
-        .container
-          .carousel-caption
-            %h1 Slide 3
-            %p Donec sit amet mi imperdiet mauris viverra accumsan ut at libero.
-            %p
-              %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Browse gallery
-    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
-      %span.glyphicon.glyphicon-chevron-left
-    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
-      %span.glyphicon.glyphicon-chevron-right
-  / Footer
-  %footer.text-center
-    .footer-above
+/ Slider
+#myCarousel.carousel.slide{"data-ride" => "carousel"}
+  / Indicators
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+  .carousel-inner
+    .item.active
+      %img{:alt => "First slide", :src => "img/sun_bw.png", :style => "width:100%"}/
       .container
-        .row
-          .footer-col.col-md-4.col-md-offset-4
-            %h3 Follow us on
-            %ul.list-inline
-              %li
-                %a.btn-social.btn-outline{:href => "#"}
-                  %i.fa.fa-fw.fa-facebook
-              %li
-                %a.btn-social.btn-outline{:href => "#"}
-                  %i.fa.fa-fw.fa-google-plus
-              %li
-                %a.btn-social.btn-outline{:href => "#"}
-                  %i.fa.fa-fw.fa-twitter
-            %ul.list-inline
-              %li
-                %a.go{:href => "#"}
-                  %span
-    .footer-below
+        .carousel-caption
+          %h1 Slide 1
+          %p Aenean a rutrum nulla. Vestibulum a arcu at nisi tristique pretium.
+          %p
+            %a.btn.btn-lg.btn-primary{:href => "/users/sign_up", :role => "button"} Sign up today
+    .item
+      %img{:alt => "Second slide", "data-src" => "", :src => "img/camera_bw.png", :style => "width:100%"}/
       .container
-        .row
-          .col-lg-12
-            %img{:src => "img/88x31.png"}/
-            %br/
-            Except where otherwise
-            = succeed "," do
-              %a{:href => "http://creativecommons.org/policies#license"} noted
-            %span{:href => "http://fossography.org"} this site
-            is licensed under a
-            %a{:href => "http://creativecommons.org/licenses/by-sa/4.0/"} Creative Commons Attribution 4.0 International license
+        .carousel-caption
+          %h1 Slide 2
+          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae egestas purus.
+          %p
+            %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Learn more
+    .item
+      %img{:alt => "Third slide", "data-src" => "", :src => "img/design_bw.jpg", :style => "width:100%"}/
+      .container
+        .carousel-caption
+          %h1 Slide 3
+          %p Donec sit amet mi imperdiet mauris viverra accumsan ut at libero.
+          %p
+            %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Browse gallery
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+    %span.glyphicon.glyphicon-chevron-left
+  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+    %span.glyphicon.glyphicon-chevron-right 

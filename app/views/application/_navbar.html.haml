@@ -1,14 +1,24 @@
-%nav.navbar.navbar-default
-  .container-fluid
+.navbar.navbar-custom.navbar-default
+  .container
     .navbar-header
-      %a.navbar-brand{:href => "/"} Fossography
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"}
+        %img{:alt => "logo", :src => "/img/header_logo.png"}/
+    .collapse.navbar-collapse.navbar-right
       %ul.nav.navbar-nav
-        %li= link_to 'Create New Proposal', new_seminar_path
-        %li= link_to 'View All Submissions', "/seminars"
+        %li
+          %a.menu_general{:href => "#"} About
+        %li
+          %a.menu_program{:href => "#"} Program
+        %li
+          %a.menu_venue{:href => "#"} Venue
+        %li
+          %a.menu_contact{:href => "#"} Contact
+        %li= link_to 'New Proposal', new_seminar_path
         - if user_signed_in?
-          %li= link_to 'Edit Profile', "/users/edit"
           %li= link_to 'Logout', destroy_user_session_path, method: :delete if user_signed_in?
         - else
-          %li= link_to "Sign In", "/users/sign_in"
-          %li= link_to "Sign Up", "/users/sign_up"
-          
+          %li= link_to "Sign In", "/users/sign_in"          
