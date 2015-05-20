@@ -1,32 +1,34 @@
-.col-md-12
-  %h1 Sign up with Fossography
-  %br
+.row{style: "background-color: #f9f9f9"}
+  .col-md-1
+  .col-md-9
+    %h1 Sign up with Fossography
+    %br
 
 
-  = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .col-md-4
-      = f.text_field :first_name, autofocus: true
-      = f.text_field :family_name
-      = f.email_field :email
-      = f.text_field :webpage
-      = f.text_field :project
-      = f.text_field :bio
-    .col-md-4
-      = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
-      = f.select :shirt_size, [["No size provided"], ["S", "S"], ["M", "M"], ["L", "L"]]
-      = f.text_field :length_of_stay
-      = f.select :sponsoring_needed, [["No", "No"], ["Yes", "Yes"]]
-      = f.text_field :sponsorship_amount, help: "Please convert this to USD"
-      = f.text_field :arrival_date
-      = f.text_field :arrival_time
-      = f.text_field :arrival_flight_number
-    .col-md-4
-      = f.password_field :password, autocomplete: "off", help: "#{@minimum_password_length} characters minimum"
-      = f.password_field :password_confirmation, autocomplete: "off"
-      = f.submit "Sign up"
+    = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .col-md-4
+        = f.text_field :first_name, autofocus: true
+        = f.text_field :family_name
+        = f.email_field :email
+        = f.text_field :webpage
+        = f.text_field :project
+        = f.text_field :bio
+      .col-md-4
+        = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
+        = f.select :shirt_size, [["No size provided"], ["S", "S"], ["M", "M"], ["L", "L"]]
+        = f.text_field :length_of_stay
+        = f.select :sponsoring_needed, [["No", "No"], ["Yes", "Yes"]]
+        = f.text_field :sponsorship_amount, help: "Please convert this to USD"
+        = f.text_field :arrival_date
+        = f.text_field :arrival_time
+        = f.text_field :arrival_flight_number
+      .col-md-4
+        = f.password_field :password, autocomplete: "off", help: "#{@minimum_password_length} characters minimum"
+        = f.password_field :password_confirmation, autocomplete: "off"
+        = f.submit "Sign up"
 
-      %br
-      %br
+        %br
+        %br
 
-      = render "devise/shared/links"
+        = render "devise/shared/links"

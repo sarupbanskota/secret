@@ -1,30 +1,32 @@
-.col-md-12{style: "background-color: #f9f9f9"}
-  %h3 Edit Profile
-  %br
+.row{style: "background-color: #f9f9f9"}
+  .col-md-1
+  .col-md-9
+    %h3 Edit Profile
+    %br
 
-  = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = devise_error_messages!
-    .col-md-4
-      = f.text_field :first_name
-      = f.text_field :family_name
-      = f.email_field :email, autofocus: true
-      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-        %div
-          Currently waiting confirmation for: #{resource.unconfirmed_email}
-      = f.text_field :webpage
-      = f.text_field :project
-      = f.text_field :bio
-    .col-md-4
-      = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
-      = f.select :shirt_size, [["No size provided"], ["S", "S"], ["M", "M"], ["L", "L"]]
-      = f.text_field :length_of_stay
-      = f.select :sponsoring_needed, [["No", "No"], ["Yes", "Yes"]]
-      = f.text_field :sponsorship_amount, help: "Please convert this to USD"
-      = f.text_field :arrival_date
-      = f.text_field :arrival_time
-      = f.text_field :arrival_flight_number
-    .col-md-4
-      = f.password_field :password, autocomplete: "off", help: "Leave blank if you don't want to change it"
-      = f.password_field :password_confirmation, autocomplete: "off"
-      = f.password_field :current_password, autocomplete: "off", help: "We need your current password to confirm your changes"
-      = f.submit "Update"
+    = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+      .col-md-4
+        = f.text_field :first_name
+        = f.text_field :family_name
+        = f.email_field :email, autofocus: true
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+        = f.text_field :webpage
+        = f.text_field :project
+        = f.text_field :bio
+      .col-md-4
+        = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
+        = f.select :shirt_size, [["No size provided"], ["S", "S"], ["M", "M"], ["L", "L"]]
+        = f.text_field :length_of_stay
+        = f.select :sponsoring_needed, [["No", "No"], ["Yes", "Yes"]]
+        = f.text_field :sponsorship_amount, help: "Please convert this to USD"
+        = f.text_field :arrival_date
+        = f.text_field :arrival_time
+        = f.text_field :arrival_flight_number
+      .col-md-4
+        = f.password_field :password, autocomplete: "off", help: "Leave blank if you don't want to change it"
+        = f.password_field :password_confirmation, autocomplete: "off"
+        = f.password_field :current_password, autocomplete: "off", help: "We need your current password to confirm your changes"
+        = f.submit "Update"
