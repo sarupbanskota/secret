@@ -8,6 +8,8 @@ gem 'rails', '4.1.4'
 gem 'rake', '~> 0.9.6'
 gem 'devise'
 gem 'haml'
+gem 'font-awesome-rails'
+
 
 
 # Support for databases and environment.
