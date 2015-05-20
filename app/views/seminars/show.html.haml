@@ -1,60 +1,63 @@
-%p#notice= notice
+%div{style: "background-color: #f9f9f9"}
+  %p#notice= notice
 
-.row
-  .col-md-1
-    %br
-    - unless @seminar.category == "Select Category"
-      .btn.btn-sm.btn-primary
-        = @seminar.category
-  .col-md-11
-    %h3= @seminar.headline
-    %h5= @seminar.subline
-
-
-    by:
-    %strong
-      = @seminar.user.first_name
-      = @seminar.user.family_name
-    %br
-
-    = @seminar.duration
-
-%br
+  .row
+    .col-md-1
+    .col-md-1
+      %br
+      - unless @seminar.category == "Select Category"
+        .btn.btn-sm.btn-primary
+          = @seminar.category
+    .col-md-10
+      %h3= @seminar.headline
+      %h5= @seminar.subline
 
 
-%strong Description:
-%br
-= @seminar.description
+      by:
+      %strong
+        = @seminar.user.first_name
+        = @seminar.user.family_name
+      %br
 
-%br
-%br
+      = @seminar.duration
 
-- if user_signed_in? and current_user.role == "admin"
-  %p
-    %strong Slot:
-    = @seminar.slot
-  %p
-    %strong Confirmed:
-    = @seminar.confirmed
-
-  %p
-    %strong Accepted:
-    = @seminar.accepted
-  %p
-    %strong Track:
-    = @seminar.track
-  %p
-    %strong Date:
-    = @seminar.date
-
-- if user_signed_in? and ((current_user.id == @seminar.user_id) or current_user.role == "admin")
   %br
-  %br
-  = link_to 'Edit Proposal', edit_seminar_path(@seminar)
-  %br
-  = link_to 'Withdraw Proposal', @seminar, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
-%br
-%br
-= link_to "< Back", seminars_path
+  .row
+    .col-md-1
+    .col-md-9
+      %strong Description:
+      %br
+      = @seminar.description
+
+      %br
+      %br
+
+      - if user_signed_in? and current_user.role == "admin"
+        %p
+          %strong Slot:
+          = @seminar.slot
+        %p
+          %strong Confirmed:
+          = @seminar.confirmed
+
+        %p
+          %strong Accepted:
+          = @seminar.accepted
+        %p
+          %strong Track:
+          = @seminar.track
+        %p
+          %strong Date:
+          = @seminar.date
+
+      %br
+      = link_to "< Back", seminars_path
+
+      - if user_signed_in? and ((current_user.id == @seminar.user_id) or current_user.role == "admin")
+        %br
+        %br
+        = link_to 'Edit Proposal', edit_seminar_path(@seminar)
+        %br
+        = link_to 'Withdraw Proposal', @seminar, method: :delete, data: { confirm: 'Are you sure?' }
+
