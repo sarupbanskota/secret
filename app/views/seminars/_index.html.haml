@@ -3,7 +3,6 @@
     %tr
       %th Link 
       %th Category
-      %th User
       %th Headline
       %th Subline
       %th Description
@@ -21,9 +20,6 @@
       %tr
         %td= link_to 'Expand', seminar
         %td= seminar.category
-        %td
-          = seminar.user.first_name
-          = seminar.user.family_name
         %td= seminar.headline
         %td= seminar.subline
         %td
