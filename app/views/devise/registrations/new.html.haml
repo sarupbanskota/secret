@@ -19,8 +19,8 @@
       = f.text_field :length_of_stay, help: "No. of days you intend to stay, e.g. 5"
 
       = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed" }, help: "Do you require sponsorship to attend this event?" do
-        = f.radio_button :sponsoring_needed, 0, label: "Yes"
-        = f.radio_button :sponsoring_needed, 1, label: "No", checked: true
+        = f.radio_button :sponsoring_needed, "Yes", label: "Yes"        
+        = f.radio_button :sponsoring_needed, "No", label: "No", checked: true
 
       = f.text_field :sponsorship_amount, help: "Please convert this to USD"
       = f.text_field :arrival_date
