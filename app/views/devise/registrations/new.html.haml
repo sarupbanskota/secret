@@ -1,4 +1,4 @@
-.row{style: "background-color: #f9f9f9"}
+.row{style: "background-color: #2e2e2e"}
   .col-md-4
   .col-md-4
     %h3 Sign up with Fossography!
@@ -35,3 +35,9 @@
       %br
 
       = render "devise/shared/links"
+
+      %br
+      %br
+
+:javascript
+  $('.required').next().css('border', 'solid 2px #aa0019');

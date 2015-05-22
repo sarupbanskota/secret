@@ -1,10 +1,10 @@
-.row{style: "background-color: #f9f9f9"}
+.row{style: "background-color: #2e2e2e"}
   .col-md-4
   .col-md-4
     %h3 Edit Profile
     %br
 
-    = bootstrap_form_for(resource, layout: :horizontal, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = f.text_field :first_name
       = f.text_field :family_name
       = f.email_field :email, autofocus: true
@@ -36,3 +36,6 @@
 
       %br
       %br
+
+:javascript
+  $('.required').next().css('border', 'solid 2px #aa0019');

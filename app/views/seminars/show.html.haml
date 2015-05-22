@@ -1,6 +1,4 @@
 %div{style: "background-color: #2e2e2e"}
-  %p#notice= notice
-
   .row
     .col-md-1
     .col-md-1
@@ -8,7 +6,7 @@
       - unless @seminar.category == "Select Category"
         .btn.btn-sm.btn-primary
           = @seminar.category
-    .col-md-10
+    .col-md-7
       %h3= @seminar.headline
       %h5= @seminar.subline
 
@@ -18,14 +16,16 @@
         = @seminar.user.first_name
         = @seminar.user.family_name
       %br
+      %br
 
       = @seminar.duration
 
-  %br
+      %br
+      %br
 
   .row
-    .col-md-1
-    .col-md-9
+    .col-md-2
+    .col-md-8
       %strong Description:
       %br
       = @seminar.description
@@ -61,6 +61,6 @@
         %br
         = link_to 'Withdraw Proposal', @seminar, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
-%br
+  %br
+  %br
 
