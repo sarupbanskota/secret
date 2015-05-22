@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   has_many :seminars, dependent: :destroy
 	validates :first_name, presence: true
 	validates :family_name, presence: true
+	validates :bio, length: { maximum: 500 }
 
 end
