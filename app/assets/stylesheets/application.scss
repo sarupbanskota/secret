@@ -296,4 +296,12 @@ a.menu_contact.active {
   h3, label, div{
     color: white;
   }
+
+  th{
+    color: #2e2e2e;
+  }
+
+  td{
+    border-top: solid 1px black !important;
+  }
 }

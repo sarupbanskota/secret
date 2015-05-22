@@ -5,13 +5,14 @@
 		%br
 		.row
 			.col-md-4
-				.well
+				.well{style: "background-color: #2e2e2e"}
 					%h3 Profile Information
 					= render 'speaker_overview'
-				.well
-					%h3 Announcements
-					= render 'speaker_announcements'
-			.col-md-8.well
+				/
+					.well{style: "background-color: #2e2e2e"}
+						%h3 Announcements
+						= render 'speaker_announcements'
+			.col-md-8.well{style: "background-color: #2e2e2e"}
 				- if @seminars.count > 0
 					%h3 Proposals
 					= render 'seminars/index'
