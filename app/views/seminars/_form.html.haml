@@ -4,11 +4,17 @@
       You have errors, please fix them and submit again.
 
 
-  = f.select :category, [["Select Category"], ["Talk", "Talk"], ["Workshop", "Workshop"], ["Presentation", "Presentation"], ["Demonstration", "Demonstration"], ["Hackfest", "Hackfest"]]
-  = f.text_field :headline, help: "Give your proposal a catchy title." 
-  = f.text_field :subline
-  = f.text_area :description, help: "Explain in detail about what you're proposing - up to 1000 characters"
-  = f.text_field :duration, help: "How long is your session estimated to be in minutes? e.g. 30"
+  .row
+    .col-md-6
+      = f.select :category, [["Select Category"], ["Talk", "Talk"], ["Workshop", "Workshop"], ["Presentation", "Presentation"], ["Demonstration", "Demonstration"], ["Hackfest", "Hackfest"]]
+    .col-md-6
+      = f.text_field :duration, help: "How long is your session estimated to be in minutes? e.g. 30"
+
+  .row
+    .col-md-12
+      = f.text_field :headline, help: "Give your proposal a catchy title." 
+      = f.text_field :subline
+      = f.text_area :description, help: "Explain in detail about what you're proposing - up to 1000 characters", style: "height: 300px"
 
   - if current_user.role == "admin"
     = f.text_field :slot
