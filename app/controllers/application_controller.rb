@@ -20,7 +20,9 @@ class ApplicationController < ActionController::Base
                                                                                                 :sponsorship_amount,
     																							:arrival_date,
     																							:arrival_flight_number,
-    																							:arrival_time
+    																							:arrival_time,
+                                                                                                :avatar, 
+                                                                                                :avatar_cache
     																						 ]
 
     devise_parameter_sanitizer.for(:account_update) << [
@@ -36,7 +38,9 @@ class ApplicationController < ActionController::Base
                                                                                                 :sponsorship_amount,
     																							:arrival_date,
     																							:arrival_flight_number,
-    																							:arrival_time
+    																							:arrival_time,
+                                                                                                :avatar, 
+                                                                                                :avatar_cache
     																						 ]
 
 

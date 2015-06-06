@@ -9,6 +9,7 @@ gem 'rake', '~> 0.9.6'
 gem 'devise'
 gem 'haml'
 gem 'font-awesome-rails'
+gem 'carrierwave'
 
 
 
