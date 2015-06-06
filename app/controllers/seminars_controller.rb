@@ -6,8 +6,7 @@ class SeminarsController < ApplicationController
   respond_to :html
 
   def index
-    @seminars = Seminar.all
-    respond_with(@seminars)
+    redirect_to dashboard_path
   end
 
   def show

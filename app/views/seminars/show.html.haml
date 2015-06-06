@@ -8,7 +8,7 @@
           = @seminar.category
     .col-md-7
       %h3= @seminar.headline
-      %h5= @seminar.subline
+      %p= @seminar.subline
 
 
       by:
@@ -52,7 +52,8 @@
           = @seminar.date
 
       %br
-      = link_to "< Back", seminars_path
+
+      = link_to "< Back", dashboard_path
 
       - if user_signed_in? and ((current_user.id == @seminar.user_id) or current_user.role == "admin")
         %br
