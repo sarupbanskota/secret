@@ -4,7 +4,7 @@
       You have errors, please fix them and submit again.
   .row
     .col-md-4
-      = f.select :category, [["Select Category"], ["Talk", "Talk"], ["Workshop", "Workshop"], ["Presentation", "Presentation"], ["Demonstration", "Demonstration"], ["Hackfest", "Hackfest"]]
+      = f.select :category, [["No category chosen"], ["Talk", "Talk"], ["Workshop", "Workshop"], ["Presentation", "Presentation"], ["Demonstration", "Demonstration"], ["Hackfest", "Hackfest"]]
     .col-md-4
       = f.text_field :duration, value: "45", label: "Duration in minutes"
 

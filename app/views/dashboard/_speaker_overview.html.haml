@@ -37,5 +37,5 @@
 	%tr 
 		%td Sponsorship Amount
 		%td= current_user.sponsorship_amount
-
-.btn.btn-lg.btn-success= link_to "Edit Profile", "/users/edit", {style: "color: white"}
+%a{href: "/users/edit"}
+	.btn.btn-lg.btn-success Edit Profile
