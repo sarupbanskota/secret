@@ -17,8 +17,6 @@
           %a.menu_venue{:href => "#"} Venue
         %li
           %a.menu_contact{:href => "#"} Contact
-        %li= link_to 'New Proposal', new_seminar_path
         - if user_signed_in?
+          %li= link_to 'New Proposal', new_seminar_path
           %li= link_to 'Logout', destroy_user_session_path, method: :delete if user_signed_in?
-        - else
-          %li= link_to "Sign In", "/users/sign_in"          

@@ -1,11 +1,15 @@
 .row{style: "background-color: #2e2e2e"}
   .col-md-4
   .col-md-4
-    .col-md-12
-      %h3 Sign up with Fossography!
-      %br
+    %h3 Sign up with Fossography!
+    %br
 
     = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .row
+        .col-md-12{style: "color: #737373"}
+          Note: Not all attendees have to register, but if you let us know, it helps us calculate better.
+          %br
+          %br
       .row
         .col-md-6
           = f.text_field :first_name, autofocus: true
@@ -31,7 +35,7 @@
           = f.text_field :length_of_stay, hint: "in days, e.g. 5"
       .row
         .col-md-8
-          = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed" }, help: "Do you require sponsorship to attend this event?" do
+          = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed?" }, help: "Note: Only speakers and attendees from projects who attend an meeting or hackfest are eligible for sponsorship." do
             .row
               .col-md-2
                 = f.radio_button :sponsoring_needed, "Yes", label: "Yes"
