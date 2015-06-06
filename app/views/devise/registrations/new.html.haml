@@ -15,18 +15,18 @@
         .col-md-12
           = f.email_field :email
       .row
-        .col-md-6
-          = f.url_field :webpage
-        .col-md-6
+        .col-md-12
+          = f.url_field :webpage, value: "http://"
+        .col-md-12
           = f.text_field :project
       .row
         .col-md-12
           = f.text_area :bio, help: "Up to 500 characters", style: "height: 100px;"
       .row
         .col-md-4
-          = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
+          = f.select :meal_restriction, [["No Restriction"], ["Gluten Free", "Gluten Free"], ["Hindu Meal", "Hindu Meal"], ["Kosher", "Kosher"], ["Lactose Intolerance", "Lactose Intolerance"], ["Muslim Meal", "Muslim Meal"], ["Vean", "Vean"], ["Vegetarian", "Vegetarian"]]
         .col-md-4
-          = f.select :shirt_size, [["No size chosen"], ["S", "S"], ["M", "M"], ["L", "L"]]
+          = f.select :shirt_size, [["No size chosen"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"], ["XXL", "XXL"], ["2XXL", "2XXL"]]
         .col-md-4
           = f.text_field :length_of_stay, hint: "in days, e.g. 5"
       .row
@@ -38,7 +38,7 @@
               .col-md-2
                 = f.radio_button :sponsoring_needed, "No", label: "No", checked: true
         .col-md-4
-          = f.text_field :sponsorship_amount, help: "Please convert this to USD", label: "Amount in USD"
+          = f.text_field :sponsorship_amount, help: "Please convert this to USD", label: "Amount in USD", prepend: "USD"
       .row
         .col-md-4
           = f.text_field :arrival_date
