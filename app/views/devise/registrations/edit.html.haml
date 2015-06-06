@@ -1,41 +1,61 @@
 .row{style: "background-color: #2e2e2e"}
   .col-md-4
   .col-md-4
-    %h3 Edit Profile
-    %br
+    .col-md-12
+      %h3 Edit Fossography profile
+      %br
 
     = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-      = f.text_field :first_name
-      = f.text_field :family_name
-      = f.email_field :email, autofocus: true
-      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-        %div
-          Currently waiting confirmation for: #{resource.unconfirmed_email}
-      = f.text_field :webpage
-      = f.text_field :project
-      = f.text_field :bio, help: "Up to 500 characters"
+      .row
+        .col-md-6
+          = f.text_field :first_name, autofocus: true
+        .col-md-6
+          = f.text_field :family_name
+      .row
+        .col-md-6
+          = f.url_field :webpage
+        .col-md-6
+          = f.text_field :project
 
-      = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
-      = f.select :shirt_size, [["No size provided"], ["S", "S"], ["M", "M"], ["L", "L"]]
-      = f.text_field :length_of_stay, help: "No. of days you intend to stay, e.g. 5"
+      .row
+        .col-md-12
+          = f.text_area :bio, help: "Up to 500 characters", style: "height: 100px;"
+      .row
+        .col-md-4
+          = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
+        .col-md-4
+          = f.select :shirt_size, [["No size chosen"], ["S", "S"], ["M", "M"], ["L", "L"]]
+        .col-md-4
+          = f.text_field :length_of_stay, hint: "in days, e.g. 5"
+      .row
+        .col-md-8
+          = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed" }, help: "Do you require sponsorship to attend this event?" do
+            .row
+              .col-md-2
+                = f.radio_button :sponsoring_needed, "Yes", label: "Yes"
+              .col-md-2
+                = f.radio_button :sponsoring_needed, "No", label: "No", checked: true
+        .col-md-4
+          = f.text_field :sponsorship_amount, help: "Please convert this to USD", label: "Amount in USD"
+      .row
+        .col-md-4
+          = f.text_field :arrival_date
+        .col-md-4
+          = f.text_field :arrival_time
+        .col-md-4
+          = f.text_field :arrival_flight_number, label: "Arrival flight"
 
-      = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed" }, help: "Do you require sponsorship to attend this event?" do
-        - if current_user.sponsoring_needed == "Yes"
-          = f.radio_button :sponsoring_needed, "Yes", label: "Yes", checked: true          
-          = f.radio_button :sponsoring_needed, "No", label: "No"
-        - else
-          = f.radio_button :sponsoring_needed, "Yes", label: "Yes"        
-          = f.radio_button :sponsoring_needed, "No", label: "No", checked: true
-
-      = f.text_field :sponsorship_amount, help: "Please convert this to USD"
-      = f.text_field :arrival_date
-      = f.text_field :arrival_time
-      = f.text_field :arrival_flight_number
-
-      = f.password_field :password, autocomplete: "off", help: "Leave blank if you don't want to change it"
-      = f.password_field :password_confirmation, autocomplete: "off"
-      = f.password_field :current_password, autocomplete: "off", help: "We need your current password to confirm your changes"
-      = f.submit "Update"
+      .row
+        .col-md-6
+          = f.password_field :password, autocomplete: "off", help: "#{@minimum_password_length} characters minimum"
+        .col-md-6
+          = f.password_field :password_confirmation, autocomplete: "off"
+      .row
+        .col-md-12
+          = f.password_field :current_password, autocomplete: "off", help: "We need your current password to confirm your changes"
+      .row
+        .col-md-12
+          = f.submit "Update"
 
       %br
       %br

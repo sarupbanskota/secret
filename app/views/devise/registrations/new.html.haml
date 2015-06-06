@@ -16,7 +16,7 @@
           = f.email_field :email
       .row
         .col-md-6
-          = f.text_field :webpage
+          = f.url_field :webpage
         .col-md-6
           = f.text_field :project
       .row
@@ -26,9 +26,9 @@
         .col-md-4
           = f.select :meal_restriction, [["No Restriction"], ["Hindu Meal", "Hindu Meal"], ["Muslim Meal", "Muslim Meal"], ["No Fish", "No Fish"]]
         .col-md-4
-          = f.select :shirt_size, [["No size provided"], ["S", "S"], ["M", "M"], ["L", "L"]]
+          = f.select :shirt_size, [["No size chosen"], ["S", "S"], ["M", "M"], ["L", "L"]]
         .col-md-4
-          = f.text_field :length_of_stay
+          = f.text_field :length_of_stay, hint: "in days, e.g. 5"
       .row
         .col-md-8
           = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed" }, help: "Do you require sponsorship to attend this event?" do
@@ -54,6 +54,7 @@
       .row
         .col-md-12
           = f.submit "Sign up"
+          You will be sent a confirmation link to the email you specify when you sign up.
 
       %br
       %br
