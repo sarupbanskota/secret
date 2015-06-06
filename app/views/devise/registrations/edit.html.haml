@@ -13,10 +13,12 @@
           = f.text_field :family_name
       .row
         .col-md-12
+          = f.email_field :email
+      .row
+        .col-md-12
           = f.url_field :webpage, value: "http://"
         .col-md-12
           = f.text_field :project
-
       .row
         .col-md-12
           = f.text_area :bio, help: "Up to 500 characters", style: "height: 100px;"
@@ -29,14 +31,14 @@
           = f.text_field :length_of_stay, hint: "in days, e.g. 5"
       .row
         .col-md-8
-          = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed" }, help: "Do you require sponsorship to attend this event?" do
+          = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed?" }, help: "Note: Only speakers and attendees from projects who attend an meeting or hackfest are eligible for sponsorship." do
             .row
               .col-md-2
                 = f.radio_button :sponsoring_needed, "Yes", label: "Yes"
               .col-md-2
                 = f.radio_button :sponsoring_needed, "No", label: "No", checked: true
         .col-md-4
-          = f.text_field :sponsorship_amount, help: "Please convert this to USD", label: "Amount in USD", prepend: "USD"
+          = f.text_field :sponsorship_amount, label: "Amount in USD", prepend: "USD"
       .row
         .col-md-4
           = f.text_field :arrival_date
@@ -44,7 +46,6 @@
           = f.text_field :arrival_time
         .col-md-4
           = f.text_field :arrival_flight_number, label: "Arrival flight"
-
       .row
         .col-md-6
           = f.password_field :password, autocomplete: "off", help: "#{@minimum_password_length} characters minimum"

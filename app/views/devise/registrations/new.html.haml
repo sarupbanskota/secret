@@ -42,7 +42,7 @@
               .col-md-2
                 = f.radio_button :sponsoring_needed, "No", label: "No", checked: true
         .col-md-4
-          = f.text_field :sponsorship_amount, help: "Please convert this to USD", label: "Amount in USD", prepend: "USD"
+          = f.text_field :sponsorship_amount, label: "Amount in USD", prepend: "USD"
       .row
         .col-md-4
           = f.text_field :arrival_date
@@ -64,11 +64,13 @@
 
       %br
       %br
-
+  .col-md-4
+    .col-md-5
+    .col-md-4
+      %br
       = render "devise/shared/links"
 
-      %br
-      %br
+
 
 :javascript
   $('.required').next().css('border', 'solid 2px #aa0019');
