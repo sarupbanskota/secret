@@ -16,16 +16,23 @@
       = f.text_field :subline
       = f.text_area :description, help: "Explain in detail about what you're proposing - up to 1000 characters", style: "height: 300px"
 
-  - if current_user.role == "admin"
-    = f.text_field :slot
-    = f.select :confirmed, [["No", "No"], ["Yes", "Yes"]]
-    = f.select :accepted, [["No", "No"], ["Yes", "Yes"]]
-    = f.select :track, [["No Track Selected", "No Track Selected"], ["Design", "Design"], ["Fedora", "Fedora"]]
-
-    = f.text_field :date
-
-  .actions
-    = f.submit "Submit"
+  .row
+    - if current_user.role == "admin"
+      .row
+        .col-md-4
+          = f.select :accepted, [["No", "No"], ["Yes", "Yes"]]
+        .col-md-4
+          = f.text_field :slot
+        .col-md-4
+          = f.select :confirmed, [["No", "No"], ["Yes", "Yes"]]
+      .row
+        .col-md-6
+          = f.select :track, [["No Track Selected", "No Track Selected"], ["Design", "Design"], ["Fedora", "Fedora"]]
+        .col-md-6
+          = f.text_field :date
+  .row
+    .actions.col-md-12
+      = f.submit "Submit"
 
   %br
 
