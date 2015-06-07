@@ -6,6 +6,11 @@
 
     = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {multipart: true}) do |f|
       .row
+        .col-md-12{style: "color: #737373"}
+          Note: Not all attendees have to register, but if you let us know, it helps us calculate better.
+          %br
+          %br
+      .row
         .col-md-6
           = f.text_field :first_name, autofocus: true
         .col-md-6
@@ -21,9 +26,12 @@
       .row
         .col-md-12
           = f.text_area :bio, help: "Up to 500 characters", style: "height: 100px;"
-        .col-md-8
+        .col-md-6
+          = f.file_field :avatar
+        .col-md-6{style: "color: #737373"}
+          Allowed formats are .jpg and .png, with a max dimension of 100x100px.
           %br
-          = f.file_field :avatar, hint: "Allowed formats are jpg and png, with a max dimension of 100x100px."
+          %br
           = f.hidden_field :avatar_cache
       .row
         .col-md-4

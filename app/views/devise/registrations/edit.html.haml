@@ -30,6 +30,16 @@
       .row
         .col-md-12
           = f.text_area :bio, help: "Up to 500 characters", style: "height: 100px;"
+        .col-md-12
+          - if current_user.avatar.url.present?
+            %img{ src: current_user.avatar.url, style: "height: 75px; width: auto"}
+        .col-md-6
+          = f.file_field :avatar
+        .col-md-6{style: "color: #737373"}
+          Allowed formats are .jpg and .png, with a max dimension of 100x100px.
+          %br
+          %br
+          = f.hidden_field :avatar_cache
       .row
         .col-md-4
           = f.select :meal_restriction, [["No Restriction"], ["Gluten Free", "Gluten Free"], ["Hindu Meal", "Hindu Meal"], ["Kosher", "Kosher"], ["Lactose Intolerance", "Lactose Intolerance"], ["Muslim Meal", "Muslim Meal"], ["Vean", "Vean"], ["Vegetarian", "Vegetarian"]]
