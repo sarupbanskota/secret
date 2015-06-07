@@ -6,10 +6,6 @@
 
     = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {multipart: true}) do |f|
       .row
-        .col-md-8
-          %br
-          = f.file_field :avatar  
-          = f.hidden_field :avatar_cache
         .col-md-6
           = f.text_field :first_name, autofocus: true
         .col-md-6
@@ -25,6 +21,10 @@
       .row
         .col-md-12
           = f.text_area :bio, help: "Up to 500 characters", style: "height: 100px;"
+        .col-md-8
+          %br
+          = f.file_field :avatar, hint: "Allowed formats are jpg and png, with a max dimension of 100x100px."
+          = f.hidden_field :avatar_cache
       .row
         .col-md-4
           = f.select :meal_restriction, [["No Restriction"], ["Gluten Free", "Gluten Free"], ["Hindu Meal", "Hindu Meal"], ["Kosher", "Kosher"], ["Lactose Intolerance", "Lactose Intolerance"], ["Muslim Meal", "Muslim Meal"], ["Vean", "Vean"], ["Vegetarian", "Vegetarian"]]
