@@ -30,10 +30,6 @@ label.required:after {
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-/*!
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
 
 @import url('/fonts/stylesheet.css');
 
@@ -99,6 +95,40 @@ header .intro-text .skills {
     font-family: League Gothic,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1.25em;
     font-weight: 300;
+}
+
+.about {
+  color: #fff;
+  font-size: 14px;
+}
+
+.about p {
+  font-size: 16px;
+}
+
+.team p {
+  padding: 7px;
+}
+
+h4.cfp {
+  color: #F14515;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.team {
+  min-height: 190px;
+}
+
+.top-space {
+  margin-top: 20px;
+}
+
+.bottom-space {
+  margin-bottom: 40px;
+}
+
+.bottom-margin {
+  margin-bottom: 20px;
 }
 
 @media(min-width:768px) {
@@ -187,8 +217,8 @@ footer .footer-below img {
   margin-top: 20px;
   position: relative;
   text-indent: -9999px;
-  width: 86px;
-  height: 50px;
+  width: 69px;
+  height: 40px;
   background: url(../img/go.png) no-repeat;
 }
 
@@ -196,7 +226,7 @@ footer .footer-below img {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
   background: url(../img/go.png) no-repeat;
-  background-position: 0 -50px;
+  background-position: 0 -40px;
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   -moz-transition:    opacity 0.5s;
@@ -204,6 +234,31 @@ footer .footer-below img {
 }
 
 .go:hover span {
+  opacity: 1;
+}
+
+.pledgie {
+  display: inline-block;
+  margin-top: 20px;
+  position: relative;
+  text-indent: -9999px;
+  width: 69px;
+  height: 40px;
+  background: url(../img/pledgie.png) no-repeat;
+}
+
+.pledgie span {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url(../img/pledgie.png) no-repeat;
+  background-position: 0 -40px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition:    opacity 0.5s;
+  -o-transition:      opacity 0.5s;
+}
+
+.pledgie:hover span {
   opacity: 1;
 }
 
@@ -294,7 +349,6 @@ a.menu_contact.active {
 }
 
 /*  end custom menu */
-
 .yield-area{
 
   h3, label{
@@ -304,7 +358,7 @@ a.menu_contact.active {
   .white{
     color: white;
   }
-  
+
   th{
     color: white;
   }

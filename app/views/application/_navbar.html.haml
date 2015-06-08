@@ -10,13 +10,13 @@
     .collapse.navbar-collapse.navbar-right
       %ul.nav.navbar-nav
         %li
-          %a.menu_general{:href => "#"} About
+          %a.menu_general{:href => "/about"} About
         %li
-          %a.menu_program{:href => "#"} Program
+          %a.menu_program{:href => "/cfp"} Call for paper
         %li
-          %a.menu_venue{:href => "#"} Help Us
+          %a.menu_venue{:href => "/help"} Help Us!
         %li
-          %a.menu_contact{:href => "#"} Contact
+          %a.menu_contact{:href => "/team"} Team
         - if user_signed_in?
           %li= link_to 'New Proposal', new_seminar_path
           %li= link_to 'Logout', destroy_user_session_path, method: :delete if user_signed_in?

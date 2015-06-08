@@ -4,4 +4,13 @@ class StaticController < ApplicationController
 			redirect_to "/dashboard"
 		end
 	end
+
+	def cfp
+	end
+	def help
+	end
+	def team
+	end
+	def about
+	end
 end
