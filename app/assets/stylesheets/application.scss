@@ -12,6 +12,10 @@
  *
  *= require rails_bootstrap_forms
  *= require font-awesome
+ *= require pickadate/default
+ *= require pickadate/default.date
+ *= require pickadate/default.time
+
  */
 
 @import "bootstrap-sprockets";
@@ -293,7 +297,7 @@ a.menu_contact.active {
 
 .yield-area{
   
-  h3, label, div{
+  h3, label{
     color: white;
   }
 

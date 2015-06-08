@@ -10,6 +10,8 @@ gem 'devise'
 gem 'haml'
 gem 'font-awesome-rails'
 gem 'carrierwave'
+gem 'pickadate-rails'
+
 
 
 
