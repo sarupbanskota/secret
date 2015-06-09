@@ -1,0 +1,10 @@
+%br
+.row
+  .col-md-7.col-xs-1.col-sm-1
+  .col-md-3.well.col-xs-10.col-sm-10.white{style: "background-color: #2e2e2e"}
+    %h4 Resend confirmation instructions
+    %br
+
+    = bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      = f.email_field :email, autofocus: true
+      = f.submit "Resend confirmation instructions"
