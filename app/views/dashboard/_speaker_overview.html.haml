@@ -12,15 +12,26 @@
 
 	%tr
 		%td Project
-		%td= current_user.project
+		- if current_user.project == ""
+			%td None specified
+		- else
+			%td= current_user.project
+
 
 	%tr
 		%td Webpage
-		%td= current_user.webpage
+		- if current_user.webpage == "http://"
+			%td None specified
+		- else
+			%td= current_user.webpage
+
 
 	%tr
 		%td Bio
-		%td= current_user.bio
+		- if current_user.bio == ""
+			%td None specified
+		- else
+			%td= current_user.bio
 
 %table.table
 	%thead
@@ -34,8 +45,14 @@
 	%tr
 		%td Sponsorship Required
 		%td= current_user.sponsoring_needed
-	%tr 
-		%td Sponsorship Amount
-		%td= current_user.sponsorship_amount
+	- unless current_user.sponsoring_needed == "No"
+		%tr 
+			%td Sponsorship Amount
+			- if current_user.sponsorship_amount == ""
+				%td None specified
+			- else 
+				%td
+					USD
+					= current_user.sponsorship_amount
 %a{href: "/users/edit"}
 	.btn.btn-lg.btn-success Edit Profile
