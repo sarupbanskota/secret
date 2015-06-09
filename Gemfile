@@ -11,8 +11,7 @@ gem 'haml'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'pickadate-rails'
-
-
+gem 'lightbox-bootstrap-rails'
 
 
 # Support for databases and environment.
