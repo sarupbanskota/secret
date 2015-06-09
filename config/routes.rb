@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :seminars
 
-  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
   root to: "static#index"
 
   get '/dashboard' => 'dashboard#index'

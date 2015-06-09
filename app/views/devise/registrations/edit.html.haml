@@ -56,14 +56,21 @@
           = f.text_field :arrival_time, class: "timepicker"
         .col-xs-4
           = f.text_field :arrival_flight_number, label: "Arrival flight"
-      .row
-        .col-md-6
-          = f.password_field :password, autocomplete: "off", help: "#{@minimum_password_length} characters minimum"
-        .col-md-6
-          = f.password_field :password_confirmation, autocomplete: "off"
-      .row
+         
+      #password-edit
+        .row
+          .col-md-6
+            = f.password_field :password, autocomplete: "off", help: "8 characters minimum", label: "New password"
+          .col-md-6
+            = f.password_field :password_confirmation, autocomplete: "off"
+        .row
+          .col-md-12
+            = f.password_field :current_password, autocomplete: "off", help: "We need your current password to allow your password change"
+      .row#password-edit-trigger
         .col-md-12
-          = f.password_field :current_password, autocomplete: "off", help: "We need your current password to confirm your changes"
+          %a Change password?
+          %br
+          %br
       .row
         .col-md-12
           = f.submit "Update"
@@ -71,7 +78,11 @@
       %br
       %br
 
-:javascript
+:coffeescript
   $('.required').next().css('border', 'solid 2px #aa0019');
   $('.datepicker').pickadate()
   $('.timepicker').pickatime()
+  $('#password-edit').hide()
+  $('#password-edit-trigger').click ->
+    $(this).hide()
+    $('#password-edit').fadeIn()
