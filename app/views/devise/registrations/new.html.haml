@@ -39,7 +39,7 @@
         .col-xs-4
           = f.select :shirt_size, [["No size chosen"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"], ["XXL", "XXL"], ["2XXL", "2XXL"]]
         .col-xs-4
-          = f.text_field :length_of_stay, hint: "in days, e.g. 5"
+          = f.number_field :length_of_stay, append: "days"
       .row
         .col-xs-8
           = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed?" }, help: "Note: Only speakers and attendees from projects who attend an meeting or hackfest are eligible for sponsorship." do
