@@ -39,6 +39,6 @@
 								%td= user.arrival_flight_number
 								%td
 									- if user.role == "admin" 
-										= link_to "Remove Admin"
+										= link_to "Remove Admin", "/remove_admin/#{user.id}", method: :post
 									- else
-										= link_to "Make Admin", ""
+										= link_to "Make Admin", "/make_admin/#{user.id}", method: :post
