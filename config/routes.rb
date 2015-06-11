@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "static#index"
 
   get '/dashboard' => 'dashboard#index'
+  get '/registrations' => 'records#registrations'
   get '/cfp' => 'static#cfp'
   get '/help' => 'static#help'
   get '/team' => 'static#team'

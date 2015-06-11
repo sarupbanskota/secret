@@ -1,0 +1,44 @@
+.row.white{style: "background-color: #2e2e2e"}
+	.col-md-1
+	.col-md-10
+		%h3{style: "color: whitesmoke"} Fossography Registrations
+		%br
+		.row
+			.col-md-12.well{style: "background-color: #2e2e2e"}
+				%table.table
+					%thead
+						%th Name
+						%th Email
+						%th Webpage
+						%th Project
+						%th Meal Restriction
+						%th Shirt Size
+						%th Length of Stay
+						%th Sponsoring Amount
+						%th Arrival Date
+						%th Arrival Time
+						%th Flight
+						%th Permission
+					%tbody
+						- @users.each do |user|
+							%tr
+								%td
+									= user.first_name
+									= user.family_name
+								%td= user.email
+								%td= user.webpage
+								%td= user.project
+								%td= user.meal_restriction
+								%td= user.shirt_size
+								%td= user.length_of_stay
+								%td
+									- if user.sponsoring_needed == "Yes"
+										= user.sponsorship_amount
+								%td= user.arrival_date
+								%td= user.arrival_time
+								%td= user.arrival_flight_number
+								%td
+									- if user.role == "admin" 
+										= link_to "Remove Admin"
+									- else
+										= link_to "Make Admin", ""
