@@ -18,7 +18,7 @@
   %tbody
     - @seminars.each do |seminar|
       %tr
-        %td= link_to 'Expand', seminar
+        %td= link_to 'Expand', edit_seminar_path(seminar.id)
         %td= seminar.category
         %td= seminar.headline
         %td= seminar.subline

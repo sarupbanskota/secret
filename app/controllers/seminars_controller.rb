@@ -25,7 +25,7 @@ class SeminarsController < ApplicationController
     @seminar = Seminar.new(seminar_params)
     @seminar.user_id = current_user.id
     @seminar.save
-    respond_with(@seminar)
+    redirect_to dashboard_path
   end
 
   def update
