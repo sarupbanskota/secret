@@ -1,5 +1,5 @@
 - if user_signed_in? and current_user.role == "admin"
-	%table.table.table-striped
+	%table.table
 		%thead
 			%th Meal Type
 			%th Count
@@ -7,11 +7,23 @@
 			%td No Restriction
 			%td= @no_restriction_count
 		%tr
+			%td Gluten Free
+			%td= @gluten_free_count
+		%tr
 			%td Hindu Meal
 			%td= @hindu_meal_count
+		%tr
+			%td Kosher Meal
+			%td= @kosher_meal_count
+		%tr
+			%td Lactose Intolerance
+			%td= @lactose_intolerance_count
 		%tr
 			%td Muslim Meal
 			%td= @muslim_meal_count
 		%tr
-			%td No Fish
-			%td= @no_fish_count
+			%td Vean
+			%td= @vean_count
+		%tr
+			%td Vegetarian
+			%td= @vegetarian_count

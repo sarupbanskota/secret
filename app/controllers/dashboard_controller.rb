@@ -7,11 +7,18 @@ class DashboardController < ApplicationController
 					@s_count = User.where(shirt_size: "S").count
 					@m_count = User.where(shirt_size: "M").count
 					@l_count = User.where(shirt_size: "L").count
+					@xl_count = User.where(shirt_size: "XL").count
+					@xxl_count = User.where(shirt_size: "XXL").count
+					@two_xxl_count = User.where(shirt_size: "2XXL").count
 
 					@no_restriction_count = User.where(meal_restriction: "No Restriction").count
+					@gluten_free_count = User.where(meal_restriction: "Gluten Free").count
+					@kosher_count = User.where(meal_restriction: "Kosher").count
+					@lactose_intolerance_count = User.where(meal_restriction: "Lactose Intolerance").count
+					@vean_count = User.where(meal_restriction: "Vean").count
+					@vegetarian = User.where(meal_restriction: "Vegetarian").count
 					@hindu_meal_count = User.where(meal_restriction: "Hindu Meal").count
 					@muslim_meal_count = User.where(meal_restriction: "Muslim Meal").count
-					@no_fish_count = User.where(meal_restriction: "No Fish").count
 					@seminars = Seminar.all   
 					render "_admin_dashboard"
 				when "speaker"
