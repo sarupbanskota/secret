@@ -38,10 +38,10 @@
           .col-xs-4
             = f.text_field :date, class: "datepicker"
             = f.text_field :slot, class: "timepicker"
-    .row
-      .actions.col-md-12
-        = f.submit "Submit"
-      %br
+  .row
+    .actions.col-md-12
+      = f.submit "Submit"
+    %br
 
 :coffeescript
   $('.required').next().css('border', 'solid 2px #aa0019');
