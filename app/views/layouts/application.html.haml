@@ -20,7 +20,10 @@
     .col-md-12{style: "top: 10px; position: absolute"}
       .col-md-11{style: "text-align: right"}
         - if user_signed_in?
-          = link_to 'New Proposal', new_seminar_path, style: "color: white"
+          - if current_user.role == "speaker"
+            = link_to 'New Proposal', new_seminar_path, style: "color: white"
+          - else
+            = link_to "Registrations", registrations_path, style: "color: white"
           &nbsp
           = link_to 'Logout', destroy_user_session_path, method: :delete, style: "color: white"
         - else
