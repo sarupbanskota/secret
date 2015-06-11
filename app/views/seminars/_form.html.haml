@@ -15,25 +15,35 @@
     .col-md-12
       = f.text_area :description, help: "Explain in detail about what you're proposing - up to 1000 characters", style: "height: 300px"
 
-  .row
-    - if current_user.role == "admin"
-      .row
-        .col-md-4
-          = f.select :accepted, [["No", "No"], ["Yes", "Yes"]]
-        .col-md-4
-          = f.text_field :slot
-        .col-md-4
-          = f.select :confirmed, [["No", "No"], ["Yes", "Yes"]]
-      .row
-        .col-md-6
-          = f.select :track, [["No Track Selected", "No Track Selected"], ["Design", "Design"], ["Fedora", "Fedora"]]
-        .col-md-6
-          = f.text_field :date
-  .row
-    .actions.col-md-12
-      = f.submit "Submit"
-
-  %br
+  - if current_user.role == "admin"
+    .row
+      .col-xs-4
+        = f.form_group :accepted, label: { text: "Accepted" } do
+          .row
+            .col-xs-3
+              = f.radio_button :accepted, "Yes", label: "Yes", id: "sponsoring-needed"
+            .col-xs-3
+              = f.radio_button :accepted, "No", label: "No"
+      .col-xs-4
+        = f.form_group :confirmed, label: { text: "Confirmed" } do
+          .row
+            .col-xs-3
+              = f.radio_button :confirmed, "Yes", label: "Yes", id: "sponsoring-needed"
+            .col-xs-3
+              = f.radio_button :confirmed, "No", label: "No"
+      .col-xs-4
+        = f.select :track, [["No Track Selected", "No Track Selected"], ["Design", "Design"], ["Fedora", "Fedora"]]
+    .row
+      .col-xs-4
+        = f.text_field :date, class: "datepicker"
+      .col-xs-4
+        = f.text_field :slot, class: "timepicker"
+    .row
+      .actions.col-md-12
+        = f.submit "Submit"
+      %br
 
 :javascript
   $('.required').next().css('border', 'solid 2px #aa0019');
+  $('.datepicker').pickadate()
+  $('.timepicker').pickatime()

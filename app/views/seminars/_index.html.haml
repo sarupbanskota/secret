@@ -2,6 +2,7 @@
   %thead
     %tr
       %th Link 
+      %th Speaker
       %th Category
       %th Headline
       %th Duration
@@ -9,7 +10,6 @@
         %th Slot
         %th Confirmed
         %th Accepted
-        %th Confirmed
         %th Track
         %th Date
 
@@ -17,15 +17,17 @@
     - @seminars.each do |seminar|
       %tr
         %td= link_to 'Edit', edit_seminar_path(seminar.id)
+        %td
+          = seminar.user.first_name
+          = seminar.user.family_name
         %td= seminar.category
         %td= seminar.headline                       
         %td
           = seminar.duration 
-          minutes
+          min
         - if user_signed_in? and current_user.role == "admin"
           %td= seminar.slot
           %td= seminar.confirmed
           %td= seminar.accepted
-          %td= seminar.confirmed
           %td= seminar.track
           %td= seminar.date

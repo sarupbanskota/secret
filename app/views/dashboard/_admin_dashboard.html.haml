@@ -1,10 +1,10 @@
-.row{style: "background-color: #2e2e2e"}
+.row.white{style: "background-color: #2e2e2e"}
 	.col-md-1
-	.col-md-11
-		%h3 Admin Dashboard
+	.col-md-10
+		%h3{style: "color: whitesmoke"} Admin Dashboard
 		%br
 		.row
-			.col-md-12.well
+			.col-md-12.well{style: "background-color: #2e2e2e"}
 				- if @seminars.count > 0
 					%h3 Proposals
 					= render 'seminars/index'
