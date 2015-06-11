@@ -45,10 +45,10 @@
           = f.form_group :sponsoring_needed, label: { text: "Sponsoring Needed?" }, help: "Note: Only speakers and attendees from projects who attend an meeting or hackfest are eligible for sponsorship." do
             .row
               .col-xs-2
-                = f.radio_button :sponsoring_needed, "Yes", label: "Yes"
+                = f.radio_button :sponsoring_needed, "Yes", label: "Yes", id: "sponsoring-needed"
               .col-xs-2
                 = f.radio_button :sponsoring_needed, "No", label: "No", checked: true
-        .col-xs-4
+        .col-xs-4#sponsoring-amount
           = f.text_field :sponsorship_amount, label: "Amount in USD", prepend: "USD"
       .row
         .col-xs-4
@@ -73,7 +73,11 @@
       %br
 
 
-:javascript
+:coffeescript
   $('.required').next().css('border', 'solid 2px #aa0019');
   $('.datepicker').pickadate()
   $('.timepicker').pickatime()
+  $('#sponsoring-amount').hide()
+  $('input[type=radio]').click ->
+    $('#sponsoring-amount').toggle($('#sponsoring-needed').is(':checked'))
+
