@@ -10,7 +10,7 @@ class SeminarsController < ApplicationController
   end
 
   def show
-    respond_with(@seminar)
+    redirect_to dashboard_path
   end
 
   def new
