@@ -12,6 +12,8 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'pickadate-rails'
 gem 'lightbox-bootstrap-rails'
+gem 'nprogress-rails'
+
 
 
 # Support for databases and environment.

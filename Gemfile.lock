@@ -81,6 +81,7 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     mysql2 (0.3.16)
+    nprogress-rails (0.1.6.6)
     orm_adapter (0.5.0)
     pg (0.17.1)
     pickadate-rails (3.5.5.0)
@@ -157,6 +158,7 @@ DEPENDENCIES
   lightbox-bootstrap-rails
   minitest
   mysql2
+  nprogress-rails
   pg
   pickadate-rails
   rails (= 4.1.4)

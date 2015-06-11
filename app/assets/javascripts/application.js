@@ -18,4 +18,11 @@
 //= require pickadate/picker.date 
 //= require pickadate/picker.time 
 //= require lightbox-bootstrap
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .
+
+NProgress.configure({
+  ease: 'ease',
+  speed: 500
+});
