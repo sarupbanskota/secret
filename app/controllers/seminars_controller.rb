@@ -9,6 +9,21 @@ class SeminarsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def show_csv
+    if current_user.role == "admin"
+      @seminars = Seminar.all
+      respond_to do |format|
+        format.html
+        format.csv do
+          headers['Content-Disposition'] = "attachment; filename=\"proposals-list\""
+          headers['Content-Type'] ||= 'text/csv'
+        end
+      end
+    else
+      redirect_to dashboard_path
+    end
+  end
+
   def show
     redirect_to dashboard_path
   end

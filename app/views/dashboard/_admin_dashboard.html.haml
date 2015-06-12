@@ -22,6 +22,8 @@
 					= render 'registration_information'
 			.col-md-3
 				.well{style: "background-color: #2e2e2e"}
+					%h3 Downloads
+					= link_to 'Download CSV list', proposals_csv_path(format: :csv) 
 					%h3 Proposals Stats
 					= render 'proposal_stats'
 

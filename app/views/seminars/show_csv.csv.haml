@@ -1,0 +1,11 @@
+- headers = ['Headline', 'Speaker', 'Email', 'Duration', 'Slot', 'Date', 'Room', 'Track']
+= CSV.generate_line headers
+- @seminars.each do |seminar|
+  = CSV.generate_line([seminar.headline.to_s.gsub(",", ";").encode('UTF-8'), 
+                      (seminar.user.first_name + ' ' + seminar.user.family_name).to_s.gsub(",", ";").encode('UTF-8'),
+                      seminar.user.email.to_s.gsub(",", ";").encode('UTF-8'),
+                      seminar.duration.to_s.gsub(",", ";").encode('UTF-8'), 
+                      seminar.slot.to_s.gsub(",", ";").encode('UTF-8'), 
+                      seminar.date.to_s.gsub(",", ";").encode('UTF-8'), 
+                      seminar.room.to_s.gsub(",", ";").encode('UTF-8'), 
+                      seminar.track.to_s.gsub(",", ";").encode('UTF-8')]).html_safe

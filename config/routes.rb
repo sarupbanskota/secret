@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'dashboard#index'
   get '/registrations' => 'records#registrations'
+  get '/proposals_csv' => 'seminars#show_csv'
   post '/make_admin/:id' => 'records#make_admin'
   post '/remove_admin/:id' => 'records#remove_admin'
   get '/cfp' => 'static#cfp'
