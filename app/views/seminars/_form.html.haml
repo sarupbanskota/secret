@@ -24,16 +24,16 @@
               = f.radio_button :accepted, "Yes", label: "Yes", id: "accepted-session"
             .col-xs-3
               = f.radio_button :accepted, "No", label: "No"
-      .col-xs-4.confirmed-session
+      .col-xs-4.accepted-session-attr
         = f.form_group :confirmed, label: { text: "Confirmed" } do
           .row
             .col-xs-3
               = f.radio_button :confirmed, "Yes", label: "Yes"
             .col-xs-3
               = f.radio_button :confirmed, "No", label: "No"
-      .col-xs-4.confirmed-session
+      .col-xs-4.accepted-session-attr
         = f.text_field :track
-    .row.confirmed-session
+    .row.accepted-session-attr
       .col-xs-4
         = f.text_field :date, class: "datepicker"
       .col-xs-4
@@ -49,6 +49,6 @@
   $('.required').next().css('border', 'solid 2px #aa0019');
   $('.datepicker').pickadate()
   $('.timepicker').pickatime()
-  $('.confirmed-session').toggle($('#accepted-session').is(':checked'))
+  $('.accepted-session-attr').toggle($('#accepted-session').is(':checked'))
   $('input[type=radio]').click ->
-    $('.confirmed-session').toggle($('#accepted-session').is(':checked'))
+    $('.accepted-session-attr').toggle($('#accepted-session').is(':checked'))
