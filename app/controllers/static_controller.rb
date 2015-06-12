@@ -13,4 +13,10 @@ class StaticController < ApplicationController
 	end
 	def about
 	end
+	def venue
+	end
+	def news
+	end
+	def travel
+	end
 end

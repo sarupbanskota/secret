@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   get '/help' => 'static#help'
   get '/team' => 'static#team'
   get '/about' => 'static#about'
+  get '/venue' => 'static#venue'
+  get '/news' => 'static#news'
+  get '/travel' => 'static#travel'
 end
