@@ -16,7 +16,7 @@ class DashboardController < ApplicationController
 					@kosher_count = User.where(meal_restriction: "Kosher").count
 					@lactose_intolerance_count = User.where(meal_restriction: "Lactose Intolerance").count
 					@vegan_count = User.where(meal_restriction: "Vegan").count
-					@vegetarian = User.where(meal_restriction: "Vegetarian").count
+					@vegetarian_count = User.where(meal_restriction: "Vegetarian").count
 					@hindu_meal_count = User.where(meal_restriction: "Hindu Meal").count
 					@muslim_meal_count = User.where(meal_restriction: "Muslim Meal").count
 					@seminars = Seminar.all   
