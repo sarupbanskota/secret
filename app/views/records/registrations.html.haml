@@ -34,12 +34,13 @@
 										days
 								%td
 									- if user.sponsoring_needed == "Yes"
+										USD
 										= user.sponsorship_amount
 								%td= user.arrival_date
 								%td= user.arrival_time
 								%td= user.arrival_flight_number
 								%td
 									- if user.role == "admin" 
-										= link_to "Remove Admin", "/remove_admin/#{user.id}", method: :post
+										.btn.btn-danger= link_to "Remove Admin", "/remove_admin/#{user.id}", method: :post
 									- else
-										= link_to "Make Admin", "/make_admin/#{user.id}", method: :post
+										.btn.btn-success= link_to "Make Admin", "/make_admin/#{user.id}", method: :post
