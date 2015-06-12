@@ -21,7 +21,7 @@ class RecordsController < ApplicationController
 	def remove_admin
 		if current_user.role == "admin"
 			user = User.find params[:id]
-			user.role == "speaker"
+			user.role = "speaker"
 			user.save
 			redirect_to registrations_path
 		else
