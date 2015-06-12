@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612103102) do
+ActiveRecord::Schema.define(version: 20150612085644) do
 
   create_table "proposals", force: true do |t|
     t.string   "headline"
@@ -67,12 +67,12 @@ ActiveRecord::Schema.define(version: 20150612103102) do
   add_index "sessions", ["user_id"], name: "index_sessions_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                              default: "",        null: false
-    t.string   "encrypted_password",                 default: "",        null: false
+    t.string   "email",                  default: "",        null: false
+    t.string   "encrypted_password",     default: "",        null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,         null: false
+    t.integer  "sign_in_count",          default: 0,         null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -93,11 +93,11 @@ ActiveRecord::Schema.define(version: 20150612103102) do
     t.string   "sponsoring_needed"
     t.string   "sponsorship_amount"
     t.string   "show_data"
-    t.integer  "length_of_stay",         limit: 255
+    t.string   "length_of_stay"
     t.string   "arrival_date"
     t.string   "arrival_flight_number"
     t.string   "arrival_time"
-    t.string   "role",                               default: "speaker"
+    t.string   "role",                   default: "speaker"
     t.string   "avatar"
   end
 
