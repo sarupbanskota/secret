@@ -6,14 +6,14 @@
       .row.top-space.bottom-margin
         .col-md-offset-2.col-md-8
           .row
-            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "Stupa of King Norodom Suramarit", "data-toggle" => "lightbox", :href => "/img/pp1.jpg"}
-              %img.img-responsive{:src => "/img/pp1.jpg"}/
-            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "Red sky", "data-toggle" => "lightbox", :href => "/img/pp4.jpg"}
-              %img.img-responsive{:src => "/img/pp4.jpg"}/
-            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "The Royal Palace at Noon", "data-toggle" => "lightbox", :href => "/img/pp2.jpg"}
-              %img.img-responsive{:src => "/img/pp2.jpg"}/
-            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "Preabaromareachaveang - Royal Palace", "data-toggle" => "lightbox", :href => "/img/pp3.jpg"}
-              %img.img-responsive{:src => "/img/pp3.jpg"}/
+            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "Stupa of King Norodom Suramarit", "data-toggle" => "lightbox", :href => "img/pp1.jpg"}
+              %img.img-responsive.lb-height{:src => "img/pp1.jpg"}/
+            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "Red sky", "data-toggle" => "lightbox", :href => "img/pp4.jpg"}
+              %img.img-responsive.lb-height{:src => "img/pp4.jpg"}/
+            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "The Royal Palace at Noon", "data-toggle" => "lightbox", :href => "img/pp2.jpg"}
+              %img.img-responsive.lb-height{:src => "img/pp2.jpg"}/
+            %a.col-sm-3{"data-gallery" => "multiimages", "data-title" => "Preabaromareachaveang - Royal Palace", "data-toggle" => "lightbox", :href => "img/pp3.jpg"}
+              %img.img-responsive.lb-height{:src => "img/pp3.jpg"}/
       %h3 How to get there
       %p Cambodia has international airports at Phnom Penh and Siem Reap. Direct flights connect Phnom Penh International Airport in the following way:
       .row
@@ -68,29 +68,37 @@
       .row.top-space.bottom-margin
         .col-md-offset-2.col-md-8
           .row
-            %a.col-sm-4{"data-gallery" => "multiimages", "data-title" => "Phnom Penh International Airport", "data-toggle" => "lightbox", :href => "/img/air2.jpg"}
-              %img.img-responsive{:src => "/img/air2.jpg"}/
-            %a.col-sm-4{"data-gallery" => "multiimages", "data-title" => "Passport control", "data-toggle" => "lightbox", :href => "/img/air.jpg"}
-              %img.img-responsive{:src => "/img/air.jpg"}/
-            %a.col-sm-4{"data-gallery" => "multiimages", "data-title" => "Airport hall", "data-toggle" => "lightbox", :href => "/img/airport.jpg"}
-              %img.img-responsive{:src => "/img/airport.jpg"}/
-      %p Connections from Europe are possible via Doha (DOH), Beijing (NAY), Guangzhou (CAN), Seoul (ICN), Ho Chi Minh City (SGN) or Bangkok (BKK). From North America via Hong Kong (HKG). Beyond that exists the possibility for land and river connections to Phnom Penh, e.g. Ho Chi Minh City - Phnom Penh 5hrs, 15US$
+            %a.col-sm-4{"data-gallery" => "multiimages", "data-title" => "Phnom Penh International Airport", "data-toggle" => "lightbox", :href => "img/air2.jpg"}
+              %img.img-responsive.lb-height-2{:src => "img/air2.jpg"}/
+            %a.col-sm-4{"data-gallery" => "multiimages", "data-title" => "Passport control", "data-toggle" => "lightbox", :href => "img/air.jpg"}
+              %img.img-responsive.lb-height-2{:src => "img/air.jpg"}/
+            %a.col-sm-4{"data-gallery" => "multiimages", "data-title" => "Airport hall", "data-toggle" => "lightbox", :href => "img/airport.jpg"}
+              %img.img-responsive.lb-height-2{:src => "img/airport.jpg"}/
+      %p onnections from Europe are possible via Doha (DOH), Beijing (NAY), Guangzhou (CAN), Seoul (ICN), Ho Chi Minh City (SGN) or Bangkok (BKK). From North America via Hong Kong (HKG). Beyond that exists the possibility for land and river connections to Phnom Penh, e.g. Ho Chi Minh City - Phnom Penh 5hrs, US$ 15.
       %h3 Visa
       %p All visitors, except citizens of Indonesia, Malaysia, Singapore, Philippines, Laos, Thailand and Vietnam need a visa to enter Cambodia. Visas can be obtained at Cambodian embassies or consulates. Visas are also available "on arrival" at both international airports, all six international border crossings with Thailand, some international border crossings with Vietnam, and at the main border crossing with Laos.
       .row.top-space.bottom-margin
         .col-md-offset-4.col-md-4
           .row
-            %a.col-sm-12{"data-gallery" => "multiimages", "data-title" => "Cambodian Visa", "data-toggle" => "lightbox", :href => "/img/passport.jpg"}
-              %img.img-responsive{:src => "/img/passport.jpg"}/
+            %a.col-sm-12{"data-gallery" => "multiimages", "data-title" => "Cambodian Visa", "data-toggle" => "lightbox", :href => "img/passport.jpg"}
+              %img.img-responsive{:src => "img/passport.jpg"}/
       %p
-        You will need a visa type T, which will cost 30 US$. Visa are also available as so called e-visa - https://www.evisa.gov.kh/ which you can get via internet in advance.
+        You will need a visa type T, which will cost US$ 30. Visa are also available as so called
+        %a{:href => "https://www.evisa.gov.kh/"} e-visa
+        \- which you can get via internet in advance.
         %br/
         Only citizens of the following countries have to apply for a visa in advance: Afghanistan, Algeria, Arab Saudi, Bangladesh, Iran, Iraq, Pakistan, Sri Lanka, Sudan, Nigeria.
       %p For more information consult the pages of the Cambodian Tourism Ministery.
       %h3 Hotels
-      %p Phnom Penh has a wide variety of accommodation, ranging from budget guesthouses (about USD5-20) to good quality mid-range hotels (US$20-50) to extravagant palaces with extravagant prices to match.
-      %h4 DenDey Sovannaphum Hotel
-      %p Cheaper rates for booking more as one room, can be arranged. All of the proposed hotels are equipped with wireless internet
+      %p Phnom Penh has a wide variety of accommodation, ranging from budget guesthouses (about US$ 5-20) to good quality mid-range hotels (US$20-50) to extravagant palaces with extravagant prices to match. These hotels are nearby the venue
+      %ul
+        %li
+          %a{:href => "http://www.booking.com/hotel/kh/midland.de.html"} Midland Hotel
+        %li
+          %a{:href => "http://www.booking.com/hotel/kh/aime-house.de.html"} Aimé House
+        %li
+          %a{:href => "http://www.booking.com/hotel/kh/mongkul-ratanak-guesthouse.de.html"} Mongkul Ratanak Guesthouse
+      %p Cheaper rates for booking more as one room, can be arranged.
       %h3 Telephone & Internet
       %p Cheap SIM cards from $2 for GSM phones are available on almost any major street. A vendor should have an activated test card to be used to make sure your phone will operate on that network. Calls between mobile networks can be spotty and Skype calls from abroad to mobiles in Cambodia are sometimes dropped, so be prepared to redial frequently. SIM cards, phone credit and internet packages can be bought and activated at the airport located just after passing through customs. A great time and place to do so if you know you going to buy a local sim card in Cambodia. Its a good idea to have your phone sim unlocked before leaving home. It seems all phones sold in Cambodia are unlocked. Dual sim phones are cheaply available which are useful for travellers who want to use their home sim card and a local sim card at the same time.
       %p

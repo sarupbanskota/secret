@@ -1,4 +1,4 @@
-- headers = ['Name', 'Email', 'Arrival Date', 'Arrival Time', 'Arrival Flight Number', 'Meal Preference', 'T-shirt Size']
+- headers = ['Name', 'Email', 'Arrival Date', 'Arrival Time', 'Arrival Flight Number', 'Meal Restriction', 'Shirt Size']
 = CSV.generate_line headers
 - @users.each do |user|
   = CSV.generate_line([(user.first_name + ' ' + user.family_name).to_s.gsub(",", ";").encode('UTF-8'),
