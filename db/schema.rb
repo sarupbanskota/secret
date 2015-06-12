@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612082456) do
+ActiveRecord::Schema.define(version: 20150612085644) do
 
   create_table "proposals", force: true do |t|
     t.string   "headline"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150612082456) do
     t.string   "headline"
     t.string   "subline"
     t.text     "description"
-    t.string   "duration"
+    t.integer  "duration",    limit: 255
     t.string   "slot"
     t.string   "confirmed"
     t.string   "category"
