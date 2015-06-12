@@ -11,8 +11,6 @@
 						%th Email
 						%th Webpage
 						%th Project
-						%th Meal Restriction
-						%th Shirt Size
 						%th Length of Stay
 						%th Sponsoring Amount
 						%th Arrival Date
@@ -26,11 +24,14 @@
 									= user.first_name
 									= user.family_name
 								%td= user.email
-								%td= user.webpage
+								%td
+									- unless user.webpage == "http://"
+										= user.webpage
 								%td= user.project
-								%td= user.meal_restriction
-								%td= user.shirt_size
-								%td= user.length_of_stay
+								%td
+									- unless user.length_of_stay == ""
+										= user.length_of_stay
+										days
 								%td
 									- if user.sponsoring_needed == "Yes"
 										= user.sponsorship_amount
