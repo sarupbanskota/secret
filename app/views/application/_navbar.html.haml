@@ -5,15 +5,32 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "/"}
-        %img{:alt => "logo", :src => "/img/header_logo.png"}/
+        %span.icon-bar
+      %a.navbar-brand{:href => "index.html"}
+        %img{:alt => "logo", :src => "img/header_logo.png"}/
     .collapse.navbar-collapse.navbar-right
       %ul.nav.navbar-nav
+        %li.dropdown
+          %a.menu_general.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "about.html", :role => "button"}
+            About
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "about.html"} Travel
+            %li
+              %a{:href => "venue.html"} Venue
+            %li
+              %a{:href => "news.html"} News
+        %li.dropdown
+          %a.menu_program.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "cfp.html", :role => "button"}
+            Call for Paper
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "cfp.html"} Call for Paper
+            %li
+              %a{:href => "#"} Submit
         %li
-          %a.menu_general{:href => "/about"} About
+          %a.menu_venue{:href => "help.html"} Help Us!
         %li
-          %a.menu_program{:href => "/cfp"} Call for paper
-        %li
-          %a.menu_venue{:href => "/help"} Help Us!
-        %li
-          %a.menu_contact{:href => "/team"} Team
+          %a.menu_contact{:href => "team.html"} Team
