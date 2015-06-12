@@ -55,6 +55,7 @@ class SeminarsController < ApplicationController
                                       :accepted, 
                                       :confirmed, 
                                       :track, 
-                                      :date)
+                                      :date,
+                                      :room)
     end
 end
