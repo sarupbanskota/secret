@@ -4,5 +4,5 @@ class Seminar < ActiveRecord::Base
 	validates :duration, presence: true
 	validates :description, presence: true
 	validates :description, length: { in: 20..1000 }
-	validates_numericality_of :duration, only_integer: true, allow_nil: false
+	validates_numericality_of :duration, only_integer: true
 end
