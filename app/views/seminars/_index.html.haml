@@ -1,6 +1,7 @@
 %table.table
   %thead
     %tr
+      %th Index
       %th Link 
       %th Speaker
       %th Category
@@ -14,8 +15,10 @@
         %th Date
 
   %tbody
+    - index = 1
     - @seminars.each do |seminar|
       %tr
+        %td= index
         %td= link_to 'Edit', edit_seminar_path(seminar.id)
         %td
           = seminar.user.first_name
@@ -31,3 +34,5 @@
           %td= seminar.accepted
           %td= seminar.track
           %td= seminar.date
+
+      - index = index + 1

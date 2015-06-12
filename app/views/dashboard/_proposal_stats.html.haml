@@ -1,0 +1,13 @@
+%table.table
+	%thead
+		%th Session Type
+		%th Count
+	%tr
+		%td All
+		%td= @seminars.count
+	%tr
+		%td Accepted
+		%td= @accepted_session_count
+	%tr
+		%td Accepted and confirmed
+		%td= @confirmed_session_count

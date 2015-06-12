@@ -1,0 +1,19 @@
+- if user_signed_in? and current_user.role == "admin"
+	%table.table
+		%thead
+			%th User Type
+			%th Count
+		%tr
+			%td Total
+			%td= @speaker_count + @admin_count
+		%tr
+			%td Speaker
+			%td= @speaker_count
+		%tr
+			%td Admin
+			%td= @admin_count
+
+
+
+
+

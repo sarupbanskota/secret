@@ -19,7 +19,12 @@ class DashboardController < ApplicationController
 					@vegetarian_count = User.where(meal_restriction: "Vegetarian").count
 					@hindu_meal_count = User.where(meal_restriction: "Hindu Meal").count
 					@muslim_meal_count = User.where(meal_restriction: "Muslim Meal").count
-					@seminars = Seminar.all   
+					@seminars = Seminar.all
+
+					@speaker_count = User.where(role: "speaker").count
+					@admin_count = User.where(role: "admin").count
+					@confirmed_session_count = Seminar.where(accepted: "Yes", confirmed: "Yes").count
+					@accepted_session_count = Seminar.where(accepted: "Yes").count
 					render "_admin_dashboard"
 				when "speaker"
 					@seminars = current_user.seminars  
