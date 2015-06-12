@@ -7,6 +7,7 @@
 			.col-md-12.well{style: "background-color: #2e2e2e"}
 				%table.table
 					%thead
+						%th Index
 						%th Name
 						%th Email
 						%th Webpage
@@ -18,8 +19,10 @@
 						%th Flight
 						%th Permission
 					%tbody
+						- index = 1
 						- @users.each do |user|
 							%tr
+								%td= index
 								%td
 									= user.first_name
 									= user.family_name
@@ -44,3 +47,5 @@
 										.btn.btn-danger= link_to "Remove Admin", "/remove_admin/#{user.id}", method: :post, style: "color: white"
 									- else
 										.btn.btn-success= link_to "Make Admin", "/make_admin/#{user.id}", method: :post, style: "color: white"
+							- index = index + 1
+							
