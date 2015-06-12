@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 		if user_signed_in?
 			case current_user.role
 				when "admin" 
-					@no_size_count = User.where(shirt_size: "No size provided").count
+					@no_size_count = User.where(shirt_size: "No size chosen").count
 					@s_count = User.where(shirt_size: "S").count
 					@m_count = User.where(shirt_size: "M").count
 					@l_count = User.where(shirt_size: "L").count
