@@ -23,7 +23,7 @@
 			.col-md-3
 				.well{style: "background-color: #2e2e2e"}
 					%h3 Downloads
-					= link_to 'Download CSV list', proposals_csv_path(format: :csv) 
+					.btn.btn-primary= link_to 'Proposals CSV', proposals_csv_path(format: :csv), style: "color: white"
 					%h3 Proposals Stats
 					= render 'proposal_stats'
 

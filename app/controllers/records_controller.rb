@@ -28,4 +28,20 @@ class RecordsController < ApplicationController
 			redirect_to dashboard_path
 		end
 	end
+
+  def show_csv
+    if current_user.role == "admin"
+      @users = User.all
+      respond_to do |format|
+        format.html
+        format.csv do
+          headers['Content-Disposition'] = "attachment; filename=\"registrations-list\""
+          headers['Content-Type'] ||= 'text/csv'
+        end
+      end
+    else
+      redirect_to dashboard_path
+    end
+  end
+
 end
