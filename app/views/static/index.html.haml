@@ -6,30 +6,31 @@
     %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
   .carousel-inner
     .item.active
-      %img{:alt => "First slide", :src => "img/sun_bw.png", :style => "width:100%"}/
+      %img{:alt => "First slide", :src => "/img/sun_bw.png", :style => "width:100%"}/
       .container
         .carousel-caption
           %h1 Venue
           %p Find out more about the venue and how to get there.
           %p
-            %a.btn.btn-lg.btn-primary{:href => "about.html", :role => "button"} Read more
+            %a.btn.btn-lg.btn-primary{:href => "/about", :role => "button"} Read more
     .item
-      %img{:alt => "Second slide", "data-src" => "", :src => "img/camera_bw.png", :style => "width:100%"}/
+      %img{:alt => "Second slide", "data-src" => "", :src => "/img/camera_bw.png", :style => "width:100%"}/
       .container
         .carousel-caption
           %h1 Sponsorship
           %p Help us financing the event.
           %p
-            %a.btn.btn-lg.btn-primary{:href => "help.html", :role => "button"} Read more
+            %a.btn.btn-lg.btn-primary{:href => "/help", :role => "button"} Read more
     .item
-      %img{:alt => "Third slide", "data-src" => "", :src => "img/design_bw.jpg", :style => "width:100%"}/
+      %img{:alt => "Third slide", "data-src" => "", :src => "/img/design_bw.jpg", :style => "width:100%"}/
       .container
         .carousel-caption
           %h1 Proposals
           %p Submit your talk or workshop.
           %p
-            %a.btn.btn-lg.btn-primary{:href => "#", :role => "button"} Learn how
+            %a.btn.btn-lg.btn-primary{:href => "/seminars/new", :role => "button"} Learn how
   %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
     %span.glyphicon.glyphicon-chevron-left
   %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
     %span.glyphicon.glyphicon-chevron-right
+

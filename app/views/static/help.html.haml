@@ -14,3 +14,13 @@
     .col-lg-12
       %h3 Community Sponsors
       %a{:href => "http://igg.me/at/fossography/"} Your name here...
+
+:javascript
+$(document).ready(function(){
+  $('#sample_goal').goalProgress({
+    goalAmount: 20000,
+    currentAmount: 3500,
+    textBefore: '$ ',
+    textAfter: ' raised'
+  });
+});
